@@ -1,3 +1,4 @@
+<?php use App\Models\Menu; ?>
 <!-- Main Wrapper Start -->
     <!--header area start-->
     <header class="header_area header_padding">
@@ -109,43 +110,33 @@
                                 <ul>
                                     <li><a class="header_logo" href="."><img src="assets/img/logo/logo-vinfast.webp"></a></li>
                                     <li><a href=".">Trang chủ</a></li>
-                                    <li class="mega_items"><a href="shop.html">shop<i class="fa fa-angle-down"></i></a>
+                                    @foreach($menu as $key => $val)
+                                    @if($key==0)
+                                    <?php $sub_menu = Menu::where('parent', $val->id)->get(); ?>
+                                    <li class="mega_items"><a href="{{$val->slug}}">{{$val->name}}<i class="fa fa-angle-down"></i></a>
                                         <div class="mega_menu">
                                             <div class="row mega_menu_inner">
-                                                <?php for($i=1; $i<=8; $i++){ ?>
+                                                @foreach($sub_menu as $sub)
                                                 <div class="col-lg-2">
-                                                    <a href="">
-                                                        <div class="img"><img src="assets/img/bds/sp2.jpg"></div>
-                                                        <div class="iteams">blog details</div>
+                                                    <a href="{{$sub->slug}}">
+                                                        <div class="img"><img src="data/menu/800/{{$sub->img}}"></div>
+                                                        <div class="iteams">{{$sub->name}}</div>
                                                     </a>
                                                 </div>
-                                                <?php } ?>
+                                                @endforeach
                                             </div>
-                                            <!-- <ul class="mega_menu_inner">
-                                                
-                                                <li><a href="#">Shop Layouts</a>
-                                                    <ul>
-                                                        <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                                        <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Shop Layouts</a>
-                                                    <ul>
-                                                        <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                                    </ul>
-                                                </li>
-                                                
-                                            </ul>
-                                            <div class="banner_static_menu">
-                                                <a href="shop.html"><img src="assets/img/bg/banner1.jpg" alt=""></a>
-                                            </div> -->
                                         </div>
                                     </li>
-                                    <li><a href="blog.html">blog<i class="fa fa-angle-down"></i></a>
+                                    @else
+                                    <li><a href="{{$val->slug}}">{{$val->name}}</a></li>
+                                    @endif
+                                    @endforeach
+                                    
+                                    <!-- <li><a href="blog.html">blog<i class="fa fa-angle-down"></i></a>
                                         <ul class="sub_menu pages">
                                             <li><a href="blog-details.html">blog details</a></li>
                                         </ul>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </nav>
                         </div>

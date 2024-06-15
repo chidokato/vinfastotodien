@@ -66,7 +66,33 @@
             </div>
         </div>
 
-        <div class="card shadow mb-2">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">SEO</h6>
+            </div>
+            <div class="tab-content overflow">
+                <div class="tab-pane active">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>title</label>
+                                  <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>description</label>
+                                  <input value="{{$data->description}}" name="description" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="card shadow mb-2">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Ghi chú khi đăng ký</h6>
             </div>
@@ -84,9 +110,9 @@
                   </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="card shadow mb-2">
+        <!-- <div class="card shadow mb-2">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Ghi chú đặt đơn hàng</h6>
             </div>
@@ -104,7 +130,7 @@
                   </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         
     </div>
@@ -115,12 +141,12 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <div class="form-group">
                             <label>Tỉ giá Yên Nhật (¥1 = ₫...)</label>
                             <input value="{{$data->exchange}}" name="exchange" placeholder="..." type="text" class="form-control">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>hotline</label>
@@ -174,69 +200,9 @@
 
         </div>
 
-        <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Cấp bậc người dùng</h6>
-            </div>
-            <div class="tab-content overflow">
-                <div class="tab-pane active">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Kim cương</label>
-                                    <input value="{{$data->diamond}}" name="diamond" placeholder="..." type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Vàng</label>
-                                    <input value="{{$data->gold}}" name="gold" placeholder="..." type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Bạc</label>
-                                    <input value="{{$data->silver}}" name="silver" placeholder="..." type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Đồng</label>
-                                    <input value="{{$data->copper}}" name="copper" placeholder="..." type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
-        <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">SEO</h6>
-            </div>
-            <div class="tab-content overflow">
-                <div class="tab-pane active">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>title</label>
-                                  <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>description</label>
-                                  <input value="{{$data->description}}" name="description" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-        </div>
+        
 
       </div>
 </div>

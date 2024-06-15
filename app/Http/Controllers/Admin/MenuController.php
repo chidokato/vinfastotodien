@@ -9,7 +9,8 @@ use Illuminate\Support\Str;
 
 use App\Models\Menu;
 use Illuminate\Support\Facades\Auth;
-
+use Image;
+use File;
 class MenuController extends Controller
 {
     /**
@@ -43,16 +44,26 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $Menu = new Menu();
-        $Menu->user_id = Auth::User()->id;
-        $Menu->parent = $data['parent'];
-        $Menu->name = $data['name'];
+        // dd($data);
+        $menu = new Menu();
+        $menu->user_id = Auth::User()->id;
+        $menu->parent = $data['parent'];
+        $menu->name = $data['name'];
         if($data['slug']==''){
-            $Menu->slug = Str::slug($data['name'], '-');
+            $menu->slug = Str::slug($data['name'], '-');
         }else{
-            $Menu->slug = $data['slug'];
+            $menu->slug = $data['slug'];
         }
-        $Menu->save();
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/menu/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/menu/800/'.$filename));
+            $menu->img = $filename;
+        }
+
+        $menu->save();
         return redirect('admin/menu')->with('success','updated successfully');
     }
 
@@ -91,17 +102,27 @@ class MenuController extends Controller
     {
         $data = $request->all();
         // dd($data);
-        $Menu = Menu::find($id);
+        $menu = Menu::find($id);
         if ($id != $data['parent']) {
-            $Menu->parent = $data['parent'];
+            $menu->parent = $data['parent'];
         }
-        $Menu->name = $data['name'];
+        $menu->name = $data['name'];
         if($data['slug']==''){
-            $Menu->slug = Str::slug($data['name'], '-');
+            $menu->slug = Str::slug($data['name'], '-');
         }else{
-            $Menu->slug = $data['slug'];
+            $menu->slug = $data['slug'];
         }
-        $Menu->save();
+        // thêm ảnh
+        if ($request->hasFile('img')) {
+            if(File::exists('data/menu/800/'.$menu->img)) { File::delete('data/menu/800/'.$menu->img); } // xóa ảnh cũ
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/menu/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/menu/800/'.$filename));
+            $menu->img = $filename;
+        }
+        // thêm ảnh
+        $menu->save();
         return redirect()->back();
     }
 
@@ -113,7 +134,9 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        Menu::find($id)->delete();
+        $menu = Menu::find($id);
+        if(File::exists('data/menu/800/'.$menu->img)) { File::delete('data/menu/800/'.$menu->img); } // xóa ảnh cũ
+        $menu->delete();
         return redirect()->back();
     }
 }

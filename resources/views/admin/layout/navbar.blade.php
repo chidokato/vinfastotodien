@@ -54,7 +54,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('setting.index')}}">Cấu hình</a>
                 <a class="collapse-item" href="{{route('menu.index')}}">Menu</a>
-                <a class="collapse-item" href="{{route('option.index')}}">Tùy chọn</a>
+                <!-- <a class="collapse-item" href="{{route('option.index')}}">Tùy chọn</a> -->
                 <a class="collapse-item" href="{{route('slider.show', 'slider')}}">Slider</a>
                 <a class="collapse-item" href="{{route('slider.show', 'banner')}}">Banner</a>
             </div>

@@ -35,13 +35,6 @@ class SettingController extends Controller
         $setting->facebook = $data['facebook'];
         $setting->youtube = $data['youtube'];
         $setting->maps = $data['maps'];
-        $setting->exchange = $data['exchange'];
-        $setting->content_cart = $data['content_cart'];
-        $setting->diamond = $data['diamond'];
-        $setting->gold = $data['gold'];
-        $setting->silver = $data['silver'];
-        $setting->copper = $data['copper'];
-        $setting->register = $data['register'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {
