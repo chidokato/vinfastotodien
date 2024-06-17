@@ -51,12 +51,6 @@
                               </div>
                           </div>
                           <div class="col-md-12">
-                            <div class="form-group">
-                                  <label>Link</label>
-                                  <input name="link" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
                               <div class="form-group">
                                   <label>Content</label>
                                   <textarea name="content" rows="4" class="form-control"></textarea>

@@ -30,39 +30,85 @@ class HomeController extends Controller
     {
         $setting = Setting::find('1');
         $menu = Menu::where('parent', 0)->orderBy('view', 'asc')->get();
-        $cat_sibar = Category::where('sort_by', 'Product')->where('parent', 0)->orderBy('view', 'asc')->get();
-        $post_news = Post::orderBy('id', 'desc')->take(5)->get();
         view()->share( [
             'setting'=>$setting,
             'menu'=>$menu,
-            'cat_sibar'=>$cat_sibar,
-            'post_news'=>$post_news,
         ]);
     }
 
     public function index()
     {
         $slider = Slider::orderBy('id', 'desc')->get();
-        $cafe = Post::where('category_id', 77)->orderBy('id', 'desc')->take(6)->get();
-        $sphot = Post::where('hot', 'true')->orderBy('id', 'desc')->take(6)->get();
-        $seikonam = Post::wherein('category_id', [83])->orderBy('id', 'desc')->take(12)->get();
-        $seikonu = Post::wherein('category_id', [84])->orderBy('id', 'desc')->take(12)->get();
-        $mypham = Post::wherein('category_id', [78,91,92])->orderBy('id', 'desc')->take(8)->get();
-        $thucpham = Post::wherein('category_id', [85])->orderBy('id', 'desc')->take(8)->get();
-        $traicay = Post::wherein('category_id', [79])->orderBy('id', 'desc')->take(8)->get();
-
+        $cat_home_first = Category::where('parent', 99)->orderBy('id', 'desc')->first();
+        $cat_home = Category::where('parent', 99)->where('id', '!=', Category::where('parent', 99)->max('id'))->orderBy('id', 'desc')->take(6)->get();
+        $post = Post::where('sort_by', 'Product')->take(6)->orderBy('id', 'desc')->get();
         return view('pages.home', compact(
             'slider',
-            'cafe',
-            'sphot',
-            'seikonam',
-            'seikonu',
-            'mypham',
-            'thucpham',
-            'traicay',
-
+            'cat_home_first',
+            'cat_home',
+            'post',
         ));
     }
+
+    public function category($slug)
+    {
+        $data = Category::where('slug', $slug)->first();
+        
+        // cat_array
+        $cat_array = [$data["id"]];
+        $cates = Category::where('parent', $data["id"])->get();
+        foreach ($cates as $key => $cate) {
+            $cat_array[] = $cate->id;
+        }
+
+        if ($slug == 'gioi-thieu') {
+            return view('pages.about', compact(
+                'data',
+            ));
+        }elseif($slug == 'lien-he'){
+            return view('pages.contact', compact(
+                'data',
+            ));
+        }else{
+            if ($data->sort_by == 'Product') {
+                $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(30);
+                return view('pages.category', compact(
+                    'data',
+                    'post',
+                ));
+            }
+        }
+    }
+
+    public function post($catslug, $slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        $images = Images::where('post_id', $post->id)->get();
+        $related_post = Post::where('category_id', $post->category_id)->whereNotIn('id', [$post->id])->orderBy('id', 'desc')->take(10)->get();
+        if ($post->sort_by == 'Product') {
+            return view('pages.project', compact(
+                'post',
+                'images',
+                'related_post',
+            ));
+        }elseif ($post->sort_by == 'News') {
+            return view('pages.post', compact(
+                'post',
+                // 'related_post',
+            ));
+        }
+    }
+    // ============================
+    // ============================
+    // ============================
+    // ============================
+    // ============================
+    // ============================
+    // ============================
+    // ============================
+    // ============================
+    // ============================
+    // ============================
 
     public function search()
     {
@@ -409,58 +455,9 @@ class HomeController extends Controller
         ], status: 200);
     }
 
-    public function category($slug)
-    {
-        $data = Category::where('slug', $slug)->first();
-        // cat_array
-        $cat_array = [$data["id"]];
-        $cates = Category::where('parent', $data["id"])->get();
-        foreach ($cates as $key => $cate) {
-            $cat_array[] = $cate->id;
-        }
-        // cat_array
-        if ($slug == 'gioi-thieu') {
-            return view('pages.about', compact(
-                'data',
-            ));
-        }elseif($slug == 'lien-he'){
-            return view('pages.contact', compact(
-                'data',
-            ));
-        }else{
-            if ($data->sort_by == 'Product') {
-                $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(30);
-                $total = Post::whereIn('category_id', $cat_array)->count();
-                return view('pages.category', compact(
-                    'data',
-                    'post',
-                    'total'
-                ));
-            }
-        }
-        
-        
-    }
+    
 
-    public function post($catslug, $slug)
-    {
-        $post = Post::where('slug', $slug)->first();
-        $images = Images::where('post_id', $post->id)->get();
-        $related_post = Post::where('category_id', $post->category_id)->whereNotIn('id', [$post->id])->orderBy('id', 'desc')->take(10)->get();
-        if ($post->sort_by == 'Product') {
-            return view('pages.project', compact(
-                'post',
-                'images',
-                'related_post',
-            ));
-        }elseif ($post->sort_by == 'News') {
-            return view('pages.post', compact(
-                'post',
-                // 'related_post',
-            ));
-        }
-        
-    }
+    
 
     
 

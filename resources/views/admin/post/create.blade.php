@@ -41,77 +41,52 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                
-                    <div class="col-md-6">
-                              <div class="form-group">
-                                  <label>Name</label>
-                                  <input name="name" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="">Danh mục</label>
-                            <select name='category_id' class="form-control select2" id="category">
-                              <?php addeditcat ($category,0,$str='',old('parent')); ?>
-                            </select>
+                            <label>Name</label>
+                            <input name="name" placeholder="..." type="text" class="form-control">
                         </div>
                     </div>
-                </div>
-                <div class="row" id="loadcustom">
-                    <!-- @foreach($option as $val)
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label>{{$val->name}}: </label>
-                        </div>
-                    </div>
-                    <div class="col-md-10 customize">
-                        <div class="form-group">
-                            @foreach(Option::where('parent', $val->id)->get() as $key => $subO)
-                            <label> <input value="{{$subO->name}}" class="form-check-input"  type="radio" name="{{$val->sku}}"> {{$subO->name}}</label>
-                            @endforeach
-                        </div>
-                    </div>
-                    @endforeach -->
                 </div>
             </div>
-
         </div>
     
         <div class="card shadow mb-2">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Nội dung</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Mô tả ngắn</h6>
             </div>
             <div class="tab-content overflow">
                 <div class="tab-pane active" id="vi">
                   <div class="card-body">
                       <div class="row">
-                          
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>Mô tả ngắn</label>
-                                  <textarea rows="4" name="detail" class="form-control"></textarea>
+                                  <textarea name="detail" class="form-control" id="ckeditor1"></textarea>
                               </div>
                           </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Mô tả sản phẩm</label>
-                                  <textarea name="content" class="form-control" id="ckeditor"></textarea>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Thông số sản phẩm</label>
-                                  <textarea name="parameter" class="form-control" id="ckeditor1"></textarea>
-                              </div>
-                          </div>
-                          
                       </div>
                   </div>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="card shadow mb-2">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Chi tiết</h6>
+            </div>
+            <div class="tab-content overflow">
+                <div class="tab-pane active" id="vi">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <textarea name="content" class="form-control" id="ckeditor"></textarea>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
         </div>
 
         @include('admin.layout.seo')
@@ -126,17 +101,22 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label class="">Danh mục</label>
+                            <select name='category_id' class="form-control select2" id="category">
+                              <?php addeditcat ($category,0,$str='',old('parent')); ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Giá bán</label>
                             <div class="flex">
                                 <input name="price" placeholder="..." type="text" class="form-control">
                                 <select name="unit" class="form-control">
-                                    <option value="¥">JPY</option>
-                                    <option value="₫">VNĐ</option>
+                                    <option value="VNĐ">VNĐ</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <div class="form-group">
                             <label>Khuyến mãi</label>
                             <input name="sale" placeholder="..." type="text" class="form-control">
@@ -151,7 +131,7 @@
                         <div class="form-group">
                             <label> <input type="checkbox" name="genuine"> Chính hãng</label>
                         </div>
-                    </div>
+                    </div> -->
 
                     
                       

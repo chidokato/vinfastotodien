@@ -54,12 +54,6 @@
                               </div>
                           </div>
                           <div class="col-md-12">
-                            <div class="form-group">
-                                  <label>Link</label>
-                                  <input name="link" value="{{$data->link}}" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
                               <div class="form-group">
                                   <label>Content</label>
                                   <textarea name="content" class="form-control" rows="5">{{$data->content}}</textarea>
@@ -80,7 +74,7 @@
             <div class="card-body">
                 <div class="file-upload">
                     <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
-                        <img class="file-upload-image" src="data/home/800/{{$data->img}}" />
+                        <img class="file-upload-image" src="data/home/{{$data->img}}" />
                     </div>
                     <div class="image-upload-wrap">
                         <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />

@@ -47,3 +47,11 @@
 .mega_menu_inner .col-lg-2{ margin-bottom:20px }
 .mega_menu_inner .img img{ border-radius:10px; width:100%; height:100px; object-fit:cover; }
 .mega_menu_inner .iteams{ font-size:1rem; font-weight:bold; text-align:center; margin-top:5px }
+
+.btn-group-product .btn-big{ position:relative; background:#c4172c; color:#fff; padding-left:40px; margin-bottom:20px; font-size:.8rem; display:flex; flex-direction: column; }
+.btn-group-product .btn-big .info-text{ font-size:1rem }
+.btn-group-product .btn-big:after{     position: absolute; margin: auto; bottom: 0;content: '';width: 45px;height: 45px;top: 0;left: 8px;border-radius: 100%; }
+.btn-group-product .btn-seller:after{ background: url(../img/icon/icon-saller.png) center center; }
+.btn-group-product .btn-request:after{ background: url(../img/icon/icon-usd.png) center center; }
+.btn-group-product .btn-test-driver:after{ background: url(../img/icon/icon-test-driver.png) center center; }
+.btn-group-product .btn-calculator:after{ background: url(../img/icon/icon-calculator.png) center center; }

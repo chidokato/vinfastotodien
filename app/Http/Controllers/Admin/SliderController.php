@@ -49,23 +49,22 @@ class SliderController extends Controller
         $slider->user_id = Auth::User()->id;
         $slider->name = $data['name'];
         $slider->note = $data['note'];
-        $slider->link = $data['link'];
         $slider->content = $data['content'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            while(file_exists("data/home/800/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
+            while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(2000, 2000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
             // $file->move('data/home', $filename);
             $slider->img = $filename;
         }
         // thêm ảnh
 
         $slider->save();
-        // return redirect('admin/slider')->with('Success','Thành công');
-        return redirect()->back()->with('Success','Thành công');
+        return redirect('admin/slider')->with('Success','Thành công');
+        // return redirect()->back()->with('Success','Thành công');
     }
 
     /**
@@ -105,16 +104,15 @@ class SliderController extends Controller
         $slider = Slider::find($id);
         $slider->name = $data['name'];
         $slider->note = $data['note'];
-        $slider->link = $data['link'];
         $slider->content = $data['content'];
         
         // thêm ảnh
         if ($request->hasFile('img')) {
-            if(File::exists('data/home/'.$slider->img)) { File::delete('data/home/800/'.$slider->img);} // xóa ảnh cũ
+            if(File::exists('data/home/'.$slider->img)) { File::delete('data/home/'.$slider->img);} // xóa ảnh cũ
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            while(file_exists("data/home/800/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
+            while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(2000, 2000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
             // $file->move('data/home', $filename);
             $slider->img = $filename;
         }

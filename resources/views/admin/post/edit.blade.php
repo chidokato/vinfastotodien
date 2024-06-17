@@ -53,40 +53,8 @@
                       </div>
                   </div>
               </div>
-              <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="">Danh mục</label>
-                            <select name='category_id' class="form-control select2" id="category">
-                              <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="loadcustom">
-                    @foreach($option as $val)
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            @if($val->name == 'img_1')
-                            <div style="display: flex;"><label>Mặt: <input type="file" name="img_1"></label> <img style="height:50px" src="data/product/knot/{{$data->img_1}}"></div>
-                            @elseif($val->name == 'img_2')
-                            <div style="display: flex; margin-bottom: 15px;"><label>Dây trên: <input type="file" name="img_1"></label> <img style="height:50px" src="data/product/knot/{{$data->img_1}}"></div>
-                            <div style="display: flex; margin-bottom: 15px;"><label>Dây dưới: <input type="file" name="img_2"></label> <img style="height:50px" src="data/product/knot/{{$data->img_2}}"></div>
-                            <div style="display: flex; margin-bottom: 15px;"><label>Dây cạnh mặt: <input type="file" name="img_3"></label> <img style="height:50px" src="data/product/knot/{{$data->img_3}}"></div>
-                            @else
-                            <label>{{$val->name}}: </label>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-10 customize">
-                        <div class="form-group">
-                            @foreach(Option::where('parent', $val->id)->get() as $key => $subO)
-                            <label> <input <?php if($data[$val->sku] == $subO->name){ echo 'checked'; } ?> value="{{$subO->name}}" class="form-check-input" type="radio" name="{{$val->sku}}"> {{$subO->name}}</label>
-                            @endforeach
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
+              
+               
             </div>
 
         </div>
@@ -98,12 +66,12 @@
             <div class="tab-content overflow">
                 <div class="tab-pane active" id="vi">
                   <div class="card-body">
+
                       <div class="row">
-                          
-                          <div class="col-md-12">
+                        <div class="col-md-12">
                               <div class="form-group">
-                                  <label>Mô tả ngắn</label>
-                                  <textarea rows="4" name="detail" class="form-control">{{$data->detail}}</textarea>
+                                  <label>Thông số sản phẩm</label>
+                                  <textarea name="detail" class="form-control" id="ckeditor1">{{$data->detail}}</textarea>
                               </div>
                           </div>
                           <div class="col-md-12">
@@ -112,12 +80,7 @@
                                   <textarea name="content" class="form-control" id="ckeditor">{{$data->content}}</textarea>
                               </div>
                           </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Thông số sản phẩm</label>
-                                  <textarea name="parameter" class="form-control" id="ckeditor1">{{$data->parameter}}</textarea>
-                              </div>
-                          </div>
+                          
                           
                       </div>
                   </div>
@@ -135,30 +98,19 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label class="">Danh mục</label>
+                            <select name='category_id' class="form-control select2" id="category">
+                              <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Giá bán</label>
                             <div class="flex">
                                 <input value="{{$data->price}}" name="price" placeholder="..." type="text" class="form-control">
                                 <select name="unit" class="form-control">
-                                    <option <?php if($data->unit == '¥'){echo 'selected';} ?> value="¥">JPY</option>
-                                    <option <?php if($data->unit == '₫'){echo 'selected';} ?> value="₫">VNĐ</option>
+                                    <option <?php if($data->unit == 'VNĐ'){echo 'selected';} ?> value="VNĐ">VNĐ</option>
                                 </select>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Khuyến mãi</label>
-                            <input name="sale" value="{{$data->sale}}" placeholder="..." type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Tồn kho</label>
-                            <input name="quantity" value="{{$data->quantity}}" placeholder="..." type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label> <input <?php if($data->genuine == 'on'){ echo 'checked'; } ?> type="checkbox" name="genuine"> Hàng chính hãng</label>
                         </div>
                     </div>
                       
@@ -173,7 +125,7 @@
             <div class="card-body">
                 <div class="file-upload">
                     <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
-                        <img class="file-upload-image" src="{{ isset($data) ? 'data/news/'.$data->img : 'data/no_image.jpg' }}" />
+                        <img class="file-upload-image" src="{{ isset($data) ? 'data/product/'.$data->img : 'data/no_image.jpg' }}" />
                     </div>
                     <div class="image-upload-wrap">
                         <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />

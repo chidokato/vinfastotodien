@@ -25,36 +25,16 @@
 <div class="shop_area shop_reverse category">
     <div class="container">
         <div class="row">
-            @include('layout.sibar')
-            <div class="col-lg-9 col-md-12">
+            <div class="col-lg-12 col-md-12">
                 <!--shop wrapper start-->
-                <!--shop toolbar start-->
-                @if(isset($data->img))
-                <div class="shop_banner">
-                    <img src="{{ $data->img? 'data/category/800/'.$data->img :''}}" alt="">
-                </div>
-                @endif
                 <div class="shop_title">
                     <h1>{{$data->name}}</h1>
                 </div>
                 @if(count($post) > 0)
-                <div class="shop_toolbar_wrapper">
-                    <div class="page_amount">
-                        <p>Hiển thị 1–{{count($post)}} of {{$total}} kết quả</p>
-                    </div>
-                    <div class="flex">
-                        <input type="hidden" value="{{$data->id}}" name="idcat" id="idcat">
-                        <select class="control" id="arrange_cat">
-                            <option value="new">Mới nhất</option>
-                            <option value="asc">Giá từ thấp -> cao</option>
-                            <option value="desc">Giá từ cao -> thấp</option>
-                        </select>
-                    </div>
-                </div>
                 <!--shop toolbar end-->
                 <div class="row shop_wrapper" id="list_cat">
                     @foreach($post as $val)
-                        <div class="col-lg-4 col-md-4 col-6 ">
+                        <div class="col-lg-6 col-md-6 col-6 ">
                             @include('pages.iteam.product')
                         </div>
                     @endforeach

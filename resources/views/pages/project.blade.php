@@ -33,12 +33,12 @@
 <div class="product_details variable_product mt-20">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-7 col-md-7">
                 <div class="product-details-tab">
                     <div class="outer">
                         <div id="big" class="owl-carousel owl-theme">
                             <div class="item" >
-                                <img src="data/news/{{$post->img}}">
+                                <img src="data/product/{{$post->img}}">
                             </div>
                             @foreach($images as $val)
                             <div class="item">
@@ -48,7 +48,7 @@
                         </div>
                         <div id="thumbs" class="owl-carousel owl-theme">
                             <div class="item">
-                                <img src="data/news/{{$post->img}}" alt="">
+                                <img src="data/product/{{$post->img}}" alt="">
                             </div>
                             @foreach($images as $val)
                             <div class="item">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-5 col-md-5">
                 <div class="product_d_right">
                     <h1>{{$post->name}}</h1>
                     <div class="product_ratings d-flex" style="align-items: center;">
@@ -71,61 +71,39 @@
                             <li><a href="#"><i class="ion-star"></i></a></li>
                             <li><a href="#"><i class="ion-star"></i></a></li>
                         </ul>
-                        <!-- <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}} sản phẩm</div> -->
                     </div>
                     
                     <div class="price_box">
                         <span class="current_price">
-                            <small>{{ $post->price ? $post->unit : '' }}</small> 
                             <span>{{ $post->price ? number_format($post->price) : 'Giá bán: Liên hệ' }}</span>
-                        </span>
-                        <span class="exchange">
-                            @if($post->unit == '¥')
-                            <small>(~₫&nbsp;</small>
-                            <span> {{number_format($post->price*$setting->exchange)}})</span>
-                            @endif
-                        </span>
-                        <span class="old_price">
-                            @php if(isset($post->sale)){
-                                echo '<small>₫&nbsp;</small>'.number_format($post->price*(1+$post->sale/100));
-                            } @endphp
+                            <small>{{ $post->price ? $post->unit : '' }}</small> 
                         </span>
                     </div>
                     <div class="product_desc">
-                        <p>{{$post->detail}}</p>
-                        @if($post->genuine == 'on')
-                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
-                        @endif
+                        {!! $post->detail !!}
                     </div>
-                    <!-- <div class="product_variant color">
-                        <h3>Available Options</h3>
-                        <label>color</label>
-                        <ul>
-                            <li class="color1"><a href="#"></a></li>
-                            <li class="color2"><a href="#"></a></li>
-                            <li class="color3"><a href="#"></a></li>
-                            <li class="color4"><a href="#"></a></li>
-                        </ul>
-                    </div> -->
-
-                    <!-- <div class="product_variant size">
-                        <label>size</label>
-                        <select class="niceselect_option" id="color2" name="produc_color2">
-                            <option selected value="1"> size in option</option>
-                            <option value="2">s</option>
-                            <option value="3">m</option>
-                            <option value="4">l</option>
-                            <option value="5">xl</option>
-                            <option value="6">xxl</option>
-                        </select>
-                    </div> -->
-                    <div class="product_variant quantity">
-                        <a data-url="{{route('addTocart', ['id' => $post->id])}}" href="#" class="add_cart"><button class="button" type="button"><span class="lnr lnr-cart"></span> Thêm vào giỏ hàng</button></a>
-                    </div>
-                    <div class=" product_d_action">
-                        <ul>
-                            <li><span class="lnr lnr-phone"></span> Gọi đặt mua: {{$setting->hotline}}</li>
-                        </ul>
+                    
+                    <div class="row btn-group-product">
+                        <div class="col-6">
+                            <a class="btn btn-big btn-seller" href="tel:0985075533">
+                                <span>Phụ trách kinh doanh</span>
+                                <span class="info-text">0985.075.533</span>
+                            </a>
+                            <a class="btn btn-big btn-request" href="">
+                                <span>Gửi liên hệ</span>
+                                <span class="info-text">Yêu cầu báo giá</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a class="btn btn-big btn-test-driver" href="">
+                                <span>Gửi liên hệ</span>
+                                <span class="info-text">Đăng ký lái thử</span>
+                            </a>
+                            <a class="btn btn-big btn-calculator" href="">
+                                <span>Tham khảo</span>
+                                <span class="info-text">Chi phí lăn bánh</span>
+                            </a>
+                        </div>
                     </div>
                     
                 </div>

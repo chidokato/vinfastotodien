@@ -2766,7 +2766,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 700;
   text-transform: capitalize;
   margin-bottom: 21px;
-  font-family: "Lato", sans-serif;
+  font-family: arial;
   width: 220px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -2883,6 +2883,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 48px;
   font-weight: 300;
   margin-bottom: 0;
+  margin-bottom: 10px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner_fullwidth .banner_text h2 {
@@ -2931,7 +2932,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .banner_fullwidth .banner_text p {
   font-size: 18px;
   line-height: 25px;
-  font-family: "Lato", sans-serif;
+  font-family: arial;
   font-weight: 300;
   margin-bottom: 35px;
 }
@@ -5980,6 +5981,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .product_d_right .price_box {
   margin-bottom: 14px;
+  margin-top: 20px;
 }
 @media only screen and (max-width: 767px) {
   .product_d_right .price_box {

@@ -95,53 +95,22 @@ class PostController extends Controller
         $post->category_id = $data['category_id'];
         $post->detail = $data['detail'];
         $post->content = $data['content'];
-        $post->parameter = $data['parameter'];
         $post->title = $data['title'];
         $post->description = $data['description'];
 
         $post->price = $data['price'];
-        $post->sale = $data['sale'];
         $post->unit = $data['unit'];
-        $post->quantity = $data['quantity'];
-
-        if (isset($data['genuine'])) { $post->genuine = $data['genuine']; }
-        if (isset($data['shape'])) { $post->shape = $data['shape']; }
-        if (isset($data['color'])) { $post->color = $data['color']; }
-        if (isset($data['size'])) { $post->size = $data['size']; }
-        if (isset($data['material'])) { $post->material = $data['material']; }
 
         // thêm ảnh
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            while(file_exists("data/news/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/news/'.$filename));
+            while(file_exists("data/product/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/'.$filename));
             // $file->move('data/news', $filename);
             $post->img = $filename;
         }
         // ---------------------
-        if ($request->hasFile('img_1')) {
-            $file = $request->file('img_1');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/product/knot', $filename);
-            $post->img_1 = $filename;
-        }
-        if ($request->hasFile('img_2')) {
-            $file = $request->file('img_2');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/product/knot', $filename);
-            $post->img_2 = $filename;
-        }
-        if ($request->hasFile('img_3')) {
-            $file = $request->file('img_3');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/product/knot', $filename);
-            $post->img_3 = $filename;
-        }
-        // thêm ảnh
         $post->save();
 
         if($request->hasFile('imgdetail')){
@@ -151,7 +120,7 @@ class PostController extends Controller
                     $Images->post_id = $post->id;
                     $filename = $file->getClientOriginalName();
                     while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
-                    $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/news/'.$filename));
+                    $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/'.$filename));
                     // $file->move('data/product/detail', $filename);
                     $Images->img = $filename;
                     $Images->save();
@@ -206,57 +175,24 @@ class PostController extends Controller
             $post->info = $data['info'];
         }
         $post->content = $data['content'];
-        $post->parameter = $data['parameter'];
         $post->title = $data['title'];
         $post->description = $data['description'];
 
         $post->price = $data['price'];
-        $post->sale = $data['sale'];
         $post->unit = $data['unit'];
-        $post->quantity = $data['quantity'];
 
-        if (isset($data['genuine'])) { $post->genuine = $data['genuine']; } else { $post->genuine = null; }
-        if (isset($data['shape'])) { $post->shape = $data['shape']; } else { $post->shape = null; }
-        if (isset($data['color'])) { $post->color = $data['color']; } else { $post->color = null; }
-        if (isset($data['size'])) { $post->size = $data['size']; } else { $post->size = null; }
-        if (isset($data['material'])) { $post->material = $data['material']; } else { $post->material = null; }
 
         // thêm ảnh
         if ($request->hasFile('img')) {
-            if(File::exists('data/news/'.$post->img)) { File::delete('data/news/'.$post->img);} // xóa ảnh cũ
+            if(File::exists('data/product/'.$post->img)) { File::delete('data/product/'.$post->img);} // xóa ảnh cũ
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            while(file_exists("data/news/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/news/'.$filename));
+            while(file_exists("data/product/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/'.$filename));
             // $file->move('data/news', $filename);
             $post->img = $filename;
         }
-        // ------------------
-        if ($request->hasFile('img_1')) {
-            if(File::exists('data/product/knot/'.$post->img_1)) { File::delete('data/product/knot/'.$post->img_1);} // xóa ảnh cũ
-            $file = $request->file('img_1');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/product/knot', $filename);
-            $post->img_1 = $filename;
-        }
-        if ($request->hasFile('img_2')) {
-            if(File::exists('data/product/knot/'.$post->img_2)) { File::delete('data/product/knot/'.$post->img_2);} // xóa ảnh cũ
-            $file = $request->file('img_2');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/product/knot', $filename);
-            $post->img_2 = $filename;
-        }
-        if ($request->hasFile('img_3')) {
-            if(File::exists('data/product/knot/'.$post->img_3)) { File::delete('data/product/knot/'.$post->img_3);} // xóa ảnh cũ
-            $file = $request->file('img_3');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/product/knot', $filename);
-            $post->img_3 = $filename;
-        }
-        // thêm ảnh
+        
         $post->save();
 
         if($request->hasFile('imgdetail')){
@@ -267,7 +203,7 @@ class PostController extends Controller
                     $filename = $file->getClientOriginalName();
                     while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
                     // $file->move('data/product/detail', $filename);
-                    $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/detail/'.$filename));
+                    $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/detail/'.$filename));
                     $Images->img = $filename;
                     $Images->save();
                 }

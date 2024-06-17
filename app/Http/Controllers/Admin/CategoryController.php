@@ -63,7 +63,7 @@ class CategoryController extends Controller
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/category/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/category/800/'.$filename));
+            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/category/'.$filename));
             $category->img = $filename;
         }
 
@@ -118,11 +118,11 @@ class CategoryController extends Controller
 
         // thêm ảnh
         if ($request->hasFile('img')) {
-            if(File::exists('data/category/800/'.$category->img)) { File::delete('data/category/800/'.$category->img); } // xóa ảnh cũ
+            if(File::exists('data/category/'.$category->img)) { File::delete('data/category/'.$category->img); } // xóa ảnh cũ
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/category/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/category/800/'.$filename));
+            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/category/'.$filename));
             $category->img = $filename;
         }
         // thêm ảnh
