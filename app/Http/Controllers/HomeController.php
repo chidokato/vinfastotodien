@@ -30,9 +30,11 @@ class HomeController extends Controller
     {
         $setting = Setting::find('1');
         $menu = Menu::where('parent', 0)->orderBy('view', 'asc')->get();
+        $dongxe = Category::where('parent', 99)->get();
         view()->share( [
             'setting'=>$setting,
             'menu'=>$menu,
+            'dongxe'=>$dongxe,
         ]);
     }
 

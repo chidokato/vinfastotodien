@@ -31,7 +31,7 @@
     </section>
     <!--slider area end-->
 
-    <section class="section0">
+    <section class="section0 new_product_area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -58,7 +58,13 @@
                         <span>Bảng giá xe VinFast</span>
                     </a>
                 </div>
-                
+            </div>
+        </div>
+    </section>
+
+    <section class="section0 " >
+        <div class="container">
+            <div class="row">
                 <div class="col-12">
                     <div class="content-home">
                         {!! $setting->content_home !!}

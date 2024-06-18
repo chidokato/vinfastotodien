@@ -75,3 +75,11 @@
 .a1222 .img{ padding:10px; background-color:#000; border-radius:5px }
 .a1222 .img img{ width:50px }
 .a1222 span{ width:100%; font-size:1.4rem; padding-left:20px }
+
+
+.footer_widgets h4{ font-size:1rem; font-weight:bold; margin-bottom:10px }
+.footer_widgets p{ margin-bottom:10px }
+
+.footer_menu ul li i{ width:16px; margin:0 auto; text-align:center; }
+
+.product_bg .single_product{ border-radius:10px;  }

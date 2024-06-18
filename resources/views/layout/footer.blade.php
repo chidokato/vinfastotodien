@@ -31,19 +31,21 @@
         <div class="container">
             <div class="footer_top">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="col-lg-5 col-md-6 col-sm-6">
                         <div class="widgets_container widget_menu">
                             <h3>VINFAST THĂNG LONG</h3>
                             <div class="footer_menu">
                                 <ul>
-                                    <li>Showroom: Số 68 Trịnh Văn Bô, Quận Nam Từ Liêm, Hà Nội</li>
-                                    <li>Hotline: 0985.075.533</li>
-                                    <li>Email: thanhfinance87@gmail.com</li>
-                                    <li>Website: https://vinfastotodien.com.vn/</li>
+                                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> Showroom: {{$setting->address}}</li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i> Hotline: {{$setting->hotline}}</li>
+                                    <li><i class="fa fa-envelope" aria-hidden="true"></i> Email: {{$setting->email}}</li>
+                                    <li><i class="fa fa-location-arrow" aria-hidden="true"></i> Website: {{asset('')}}</li>
                                 </ul>
                             </div>
-                            <h3>Giờ mở cửa</h3>
-                            <p>Từ 8h30 đến 22h00 (Hoạt động cả tuần)</p>
+                            <br>
+                            <br>
+                            <h4>Giờ mở cửa</h4>
+                            <p><i class="fa fa-clock-o" aria-hidden="true"></i> Từ 8h30 đến 22h00 (Hoạt động cả tuần)</p>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-6">
@@ -57,18 +59,14 @@
                             <p>Cung cấp phụ tùng ô tô VinFast chính hãng. Quý khách hãy yên tâm và tin rằng xe VinFast mua tại VinFast Thăng Long luôn được chăm sóc kĩ lưỡng</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-2 col-md-6 col-sm-6">
                         <div class="widgets_container widget_menu">
-                            <h3>Các dòng xe VinFast</h3>
+                            <h3>CÁC DÒNG XE</h3>
                             <div class="footer_menu">
                                 <ul>
-                                    <li><a href="">VinFast VF3</a></li>
-                                    <li><a href="">VinFast VFe34</a></li>
-                                    <li><a href="">VinFast VF5</a></li>
-                                    <li><a href="">VinFast VF6</a></li>
-                                    <li><a href="">VinFast VF7</a></li>
-                                    <li><a href="">VinFast VF8</a></li>
-                                    <li><a href="">VinFast VF9</a></li>
+                                    @foreach($dongxe as $val)
+                                    <li><a href="{{$val->slug}}"><i class="fa fa-plus" aria-hidden="true"></i> {{$val->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

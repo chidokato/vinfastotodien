@@ -26,7 +26,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('post.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sản phẩm</span></a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="{{route('promotion.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sự kiện & Khuyến mãi</span></a>
     </li>
     <li class="nav-item">
@@ -42,7 +42,7 @@
                 <a class="collapse-item" href="{{route('customer.index')}}">Liên hệ</a>
             </div>
         </div>
-    </li>
+    </li> -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#setting"
             aria-expanded="true" aria-controls="setting">
