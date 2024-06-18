@@ -31,6 +31,7 @@ class SettingController extends Controller
         $setting->description = $data['description'];
         $setting->footer = $data['footer'];
         $setting->hotline = $data['hotline'];
+        $setting->content_home = $data['content_home'];
         $setting->email = $data['email'];
         $setting->facebook = $data['facebook'];
         $setting->youtube = $data['youtube'];

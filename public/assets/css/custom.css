@@ -55,3 +55,23 @@
 .btn-group-product .btn-request:after{ background: url(../img/icon/icon-usd.png) center center; }
 .btn-group-product .btn-test-driver:after{ background: url(../img/icon/icon-test-driver.png) center center; }
 .btn-group-product .btn-calculator:after{ background: url(../img/icon/icon-calculator.png) center center; }
+
+/*section0*/
+.section0{ padding:40px 0px }
+.section0 .title-home{ margin-bottom:20px }
+.section0 .title-home h1{ text-align:center; font-size:2rem; font-weight:bold; margin-bottom:10px }
+.section0 .title-home p{ text-align:center; font-size:1rem; }
+.section0 .content-home{ border:2px dashed #ddd; border-radius:20px; padding:20px }
+.section0 .content-home h2{ font-size:1.2rem }
+.section0 .content-home ul{ padding-left:20px }
+.section0 .content-home ul li{ list-style:circle; margin-bottom:15px }
+.section0 .content-home p{ margin-bottom:15px }
+.section0 .content-home .contact{ display:flex; justify-content: center; margin-bottom:20px }
+.section0 .content-home .contact a{ display:flex; flex-direction: column; background:#fd6e1d; color:#fff; font-size:1.2rem; margin:0px 10px; padding:10px 20px; border-radius:5px; text-align:center; }
+.section0 .content-home .contact a i{ font-size:.8rem }
+.section0 .content-home{  }
+
+.a1222{ background-color:#2b2b2b; display:flex; color:#fff; align-items: center; margin-bottom:20px; border-radius:5px }
+.a1222 .img{ padding:10px; background-color:#000; border-radius:5px }
+.a1222 .img img{ width:50px }
+.a1222 span{ width:100%; font-size:1.4rem; padding-left:20px }

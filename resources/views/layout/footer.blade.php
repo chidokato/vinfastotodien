@@ -31,48 +31,56 @@
         <div class="container">
             <div class="footer_top">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="widgets_container contact_us">
-                            <div class="footer_logo">
-                                <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
-                            </div>
-                            <div class="footer_contact">
-                                <p><span>Địa chỉ:</span> {{$setting->address}}</p>
-                                <p><span>Số điện thoại:</span><a href="tel:{{$setting->hotline}}">{{$setting->hotline}}</a></p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="widgets_container widget_menu">
-                            <h3>Thôn tin về chúng tôi</h3>
+                            <h3>VINFAST THĂNG LONG</h3>
                             <div class="footer_menu">
                                 <ul>
-                                    <!-- <li><a href="">Giới thiệu</a></li> -->
-                                    <li><a href="lien-he">Liên hệ</a></li>
+                                    <li>Showroom: Số 68 Trịnh Văn Bô, Quận Nam Từ Liêm, Hà Nội</li>
+                                    <li>Hotline: 0985.075.533</li>
+                                    <li>Email: thanhfinance87@gmail.com</li>
+                                    <li>Website: https://vinfastotodien.com.vn/</li>
+                                </ul>
+                            </div>
+                            <h3>Giờ mở cửa</h3>
+                            <p>Từ 8h30 đến 22h00 (Hoạt động cả tuần)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>LIÊN HỆ NGAY ĐỂ ĐƯỢC TƯ VẤN</h3>
+                            <h4>TƯ VẤN TẬN TÌNH</h4>
+                            <p>Đội ngũ tư vấn được đào tạo chuyên nghiệp, giàu kinh nghiệm luôn sẵn lòng giúp quý khách tìm được chiếc xe ưng ý.</p>
+                            <h4>GIÁ ƯU ĐÃI – GIAO XE SỚM</h4>
+                            <p>Đại Lý VinFast Thăng Long luôn cam kết mang lại mức giá ưu đãi nhất cho quý khách với thời gian giao xe sớm tại khu vực Miền Bắc</p>
+                            <h4>BẢO HÀNH TIÊU CHUẨN TOÀN CẦU</h4>
+                            <p>Cung cấp phụ tùng ô tô VinFast chính hãng. Quý khách hãy yên tâm và tin rằng xe VinFast mua tại VinFast Thăng Long luôn được chăm sóc kĩ lưỡng</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>Các dòng xe VinFast</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="">VinFast VF3</a></li>
+                                    <li><a href="">VinFast VFe34</a></li>
+                                    <li><a href="">VinFast VF5</a></li>
+                                    <li><a href="">VinFast VF6</a></li>
+                                    <li><a href="">VinFast VF7</a></li>
+                                    <li><a href="">VinFast VF8</a></li>
+                                    <li><a href="">VinFast VF9</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-lg-4 col-md-6">
-                        <div class="widgets_container">
-                            <h3>Theo dõi chúng tôi</h3>
-                            <p>Chung tôi luôn cam kết bảo mật thông tin người dùng</p>
-                            <div class="subscribe_form">
-                                <form id="mc-form" class="mc-form footer-newsletter">
-                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email address here..." />
-                                    <button id="mc-submit">Subscribe</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="footer_bottom">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="copyright_area">
-                            <p>Bản quyền thuộc về <a href="rinlisa.com">rinlisa.com</a></p>
+                            <p>Bản quyền thuộc về <a href="rinlisa.com">vinfastotodien.com.vn</a></p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
