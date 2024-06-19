@@ -86,4 +86,6 @@
 
 .product-details-tab #thumbs .owl-item .item{ padding:5px }
 
-.product_d_info .product_d_inner h2{ font-size:1.1rem }
+.product_d_info .product_d_inner h2{ font-size:1.1rem; padding-top: 100px; margin-top: -100px; }
+
+.fix-sticky{ position: sticky; top: 75px }

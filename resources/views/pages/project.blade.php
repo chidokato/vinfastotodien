@@ -130,8 +130,8 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="product_d_inner">
-                    <div class="js-table-of-content table-of-content"></div>
+                <div class="product_d_inner fix-sticky">
+                    <div class="js-table-of-content table-of-content "></div>
                 </div>
             </div>
         </div>
@@ -178,7 +178,7 @@ $(".page-content h2, .page-content h3").each(function () {
     html +=
       '<p class="heading-' +
       data.hLevel +
-      '"><a href="#' +
+      '"><a href="{{$post->category->slug}}/{{$post->slug}}#' +
       hId +
       '">' +
       data.hText +
