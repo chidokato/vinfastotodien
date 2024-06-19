@@ -7,17 +7,6 @@
 
 @section('css')
 <style type="text/css">
-    #sync1 .item {
-  background: #0c83e7;
-  padding: 80px 0px;
-  margin: 5px;
-  color: #FFF;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-}
-
 #sync2 .item {
   background: #C9C9C9;
   padding: 10px 0px;
@@ -29,13 +18,6 @@
   text-align: center;
   cursor: pointer;
 }
-#sync2 .item h1 {
-  font-size: 18px;
-}
-#sync2 .current .item {
-  background: #0c83e7;
-}
-
 .owl-theme .owl-nav {
   /*default owl-theme theme reset .disabled:hover links */
 }
@@ -90,7 +72,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7">
-                <div class="product-details-tab">.
+                <div class="product-details-tab">
                     <div id="sync1" class="owl-carousel owl-theme">
                         <div class="item">
                             <img src="data/product/{{$post->img}}">
@@ -111,28 +93,6 @@
                         </div>
                         @endforeach
                     </div>
-                    <!-- <div class="outer">
-                        <div id="big" class="owl-carousel owl-theme">
-                            <div class="item" >
-                                <img src="data/product/{{$post->img}}">
-                            </div>
-                            @foreach($images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                        <div id="thumbs" class="owl-carousel owl-theme">
-                            <div class="item">
-                                <img src="data/product/{{$post->img}}" alt="">
-                            </div>
-                            @foreach($images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                    </div> -->
                 </div>
             </div>
 
