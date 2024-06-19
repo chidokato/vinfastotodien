@@ -8,6 +8,7 @@
 @section('css')
 <style type="text/css">
 #sync1 .item{ border:1px solid #ddd; border-radius:5px }
+#sync1 .item img{ border-radius:5px }
 #sync2 .item {
   padding: 10px 0px;
   margin: 5px;
