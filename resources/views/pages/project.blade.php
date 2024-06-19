@@ -7,8 +7,8 @@
 
 @section('css')
 <style type="text/css">
+#sync1 .item{ border:1px solid #ddd; border-radius:5px }
 #sync2 .item {
-  background: #C9C9C9;
   padding: 10px 0px;
   margin: 5px;
   color: #FFF;
@@ -19,7 +19,6 @@
   cursor: pointer;
 }
 .owl-theme .owl-nav {
-  /*default owl-theme theme reset .disabled:hover links */
 }
 .owl-theme .owl-nav [class*=owl-] {
   transition: all 0.3s ease;
