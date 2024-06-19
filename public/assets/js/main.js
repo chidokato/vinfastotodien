@@ -17,6 +17,8 @@
         dataBackgroundImage();
     });
 
+    
+
 
     /*---stickey menu---*/
     $(window).on('scroll',function() {    

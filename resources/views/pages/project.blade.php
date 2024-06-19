@@ -130,8 +130,14 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="product_d_inner fix-sticky">
-                    <div class="js-table-of-content table-of-content "></div>
+                <div class="fix-sticky">
+                    <div class="product_d_inner ">
+                        <div class="js-table-of-content table-of-content "></div>
+                    </div>
+                    <br>
+                    <div class="product_d_inner ">
+                        ádasd
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,62 +168,54 @@
 
 @section('js')
 <script>
+// tạo menu tự động từ h2 h3
 (function ($) {});
 setList();
-
 function setList() {
-  var tabId = 0;
-  var segments = [],
-    arrayId = [],
-    html = '<div class="menu-titile">';
+var tabId = 0;
+var segments = [],
+arrayId = [],
+html = '<div class="menu-titile">';
 $(".page-content h2, .page-content h3").each(function () {
-    var data = getData(this, segments),
-      hId = "tab" + tabId + "_h" + data.hLevel + segments.join("_");
-    arrayId.push(data.hLevel);
-    segments = data.segments;
-    html +=
-      '<p class="heading-' +
-      data.hLevel +
-      '"><a href="{{$post->category->slug}}/{{$post->slug}}#' +
-      hId +
-      '">' +
-      data.hText +
-      "</a></p>";
-    $(this).attr("id", hId);
-  });
-  html += "</div>";
-  console.log(html);
+var data = getData(this, segments),
+hId = "tab" + tabId + "_h" + data.hLevel + segments.join("_");
+arrayId.push(data.hLevel);
+segments = data.segments;
+html +=
+'<p class="heading-' +
+data.hLevel +
+'"><a href="{{$post->category->slug}}/{{$post->slug}}#' +
+hId +
+'">' +
+data.hText +
+"</a></p>";
+$(this).attr("id", hId);
+});
+html += "</div>";
+console.log(html);
 
-  if (arrayId.length) {
-    $(".js-table-of-content").append(html);
-  }
+if (arrayId.length) {
+$(".js-table-of-content").append(html);
 }
-
+}
 function getData(element, segments) {
-  var hLevel = parseInt(element.nodeName.substring(1), 10),
-    hIndex = parseInt(element.nodeName.substring(1)) - 1,
-    hText = $(element).text();
-
-  // Just found a levelUp event
-  if (segments.length - 1 > hIndex) {
-    segments = segments.slice(0, hIndex + 1);
-  }
-
-  // Just found a levelDown event
-  if (segments[hIndex] == undefined) {
-    segments[hIndex] = 0;
-  }
-
-  // count + 1 at current level
-  segments[hIndex]++;
-
-  return {
-    hLevel: hLevel,
-    hIndex: hIndex,
-    hText: hText,
-    segments: segments
-  };
+var hLevel = parseInt(element.nodeName.substring(1), 10),
+hIndex = parseInt(element.nodeName.substring(1)) - 1,
+hText = $(element).text();
+if (segments.length - 1 > hIndex) {
+segments = segments.slice(0, hIndex + 1);
 }
-
-    </script>
+if (segments[hIndex] == undefined) {
+segments[hIndex] = 0;
+}
+segments[hIndex]++;
+return {
+hLevel: hLevel,
+hIndex: hIndex,
+hText: hText,
+segments: segments
+};
+}
+// tạo menu tự động từ h2 h3
+</script>
 @endsection
