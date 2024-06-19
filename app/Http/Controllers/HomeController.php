@@ -63,9 +63,11 @@ class HomeController extends Controller
             $cat_array[] = $cate->id;
         }
 
-        if ($slug == 'gioi-thieu') {
-            return view('pages.about', compact(
+        if ($slug == 'bang-gia-xe-vinfast') {
+            $cat = Category::where('parent', 99)->get();
+            return view('pages.banggia', compact(
                 'data',
+                'cat',
             ));
         }elseif($slug == 'lien-he'){
             return view('pages.contact', compact(
