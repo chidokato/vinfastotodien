@@ -118,91 +118,20 @@
 <div class="product_d_info">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-8">
                 <div class="product_d_inner">
-                    <div class="product_info_button">
-                        <ul class="nav" role="tablist" id="nav-tab">
-                            <li>
-                                <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Giới thiệu chi tiết</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#sheet" role="tab" aria-controls="sheet" aria-selected="false">Thông số</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="info" role="tabpanel">
-                            <div class="product_info_content">
+                    <div class="">
+                        <div class="">
+                            <div class="product_info_content page-content">
                                 {!! $post->content !!}
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="sheet" role="tabpanel">
-                            <div class="product_info_content">
-                                {!! $post->parameter !!}
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="reviews" role="tabpanel">
-                            <div class="reviews_wrapper">
-                                <h2>1 review for Donec eu furniture</h2>
-                                <div class="reviews_comment_box">
-                                    <div class="comment_thmb">
-                                        <img src="assets/img/blog/comment2.jpg" alt="">
-                                    </div>
-                                    <div class="comment_text">
-                                        <div class="reviews_meta">
-                                            <div class="star_rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <p><strong>admin </strong>- September 12, 2018</p>
-                                            <span>roadthemes</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="comment_title">
-                                    <h2>Add a review </h2>
-                                    <p>Your email address will not be published. Required fields are marked </p>
-                                </div>
-                                <div class="product_ratting mb-10">
-                                    <h3>Your rating</h3>
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product_review_form">
-                                    <form action="#">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label for="review_comment">Your review </label>
-                                                <textarea name="comment" id="review_comment"></textarea>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <label for="author">Name</label>
-                                                <input id="author" type="text">
-
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <label for="email">Email </label>
-                                                <input id="email" type="text">
-                                            </div>
-                                        </div>
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="product_d_inner">
+                    <div class="js-table-of-content table-of-content"></div>
                 </div>
             </div>
         </div>
@@ -229,105 +158,66 @@
     </div>
 </section>
 <!--product area end-->
-
 @endsection
 
 @section('js')
-<script type="text/javascript">
-    $(document).ready(function() {
-  var bigimage = $("#big");
-  var thumbs = $("#thumbs");
-  //var totalslides = 10;
-  var syncedSecondary = false;
+<script>
+(function ($) {});
+setList();
 
-  bigimage
-    .owlCarousel({
-    items: 1,
-    slideSpeed: 2000,
-    nav: false,
-    autoplay: false,
-    dots: false,
-    loop: false,
-    responsiveRefreshRate: 200,
-    navText: [
-      '<span class="lnr lnr-chevron-left"></span>',
-      '<span class="lnr lnr-chevron-right"></span>'
-    ]
-  })
-    .on("changed.owl.carousel", syncPosition);
-
-  thumbs
-    .on("initialized.owl.carousel", function() {
-    thumbs
-      .find(".owl-item")
-      .eq(0)
-      .addClass("current");
-  })
-    .owlCarousel({
-    items: 5,
-    dots: false,
-    nav: false,
-    // navText: [
-    //   '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
-    //   '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
-    // ],
-    smartSpeed: 200,
-    slideSpeed: 500,
-    slideBy: 4,
-    responsiveRefreshRate: 100
-  })
-    .on("changed.owl.carousel", syncPosition2);
-
-  function syncPosition(el) {
-    //if loop is set to false, then you have to uncomment the next line
-    //var current = el.item.index;
-
-    //to disable loop, comment this block
-    var count = el.item.count - 1;
-    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
-
-    if (current < 0) {
-      current = count;
-    }
-    if (current > count) {
-      current = 0;
-    }
-    //to this
-    thumbs
-      .find(".owl-item")
-      .removeClass("current")
-      .eq(current)
-      .addClass("current");
-    var onscreen = thumbs.find(".owl-item.active").length - 1;
-    var start = thumbs
-    .find(".owl-item.active")
-    .first()
-    .index();
-    var end = thumbs
-    .find(".owl-item.active")
-    .last()
-    .index();
-
-    if (current > end) {
-      thumbs.data("owl.carousel").to(current, 100, true);
-    }
-    if (current < start) {
-      thumbs.data("owl.carousel").to(current - onscreen, 100, true);
-    }
-  }
-
-  function syncPosition2(el) {
-    if (syncedSecondary) {
-      var number = el.item.index;
-      bigimage.data("owl.carousel").to(number, 100, true);
-    }
-  }
-
-  thumbs.on("click", ".owl-item", function(e) {
-    e.preventDefault();
-    var number = $(this).index();
-    bigimage.data("owl.carousel").to(number, 300, true);
+function setList() {
+  var tabId = 0;
+  var segments = [],
+    arrayId = [],
+    html = '<div class="menu-titile">';
+$(".page-content h2, .page-content h3").each(function () {
+    var data = getData(this, segments),
+      hId = "tab" + tabId + "_h" + data.hLevel + segments.join("_");
+    arrayId.push(data.hLevel);
+    segments = data.segments;
+    html +=
+      '<p class="heading-' +
+      data.hLevel +
+      '"><a href="#' +
+      hId +
+      '">' +
+      data.hText +
+      "</a></p>";
+    $(this).attr("id", hId);
   });
-});
-</script>
+  html += "</div>";
+  console.log(html);
+
+  if (arrayId.length) {
+    $(".js-table-of-content").append(html);
+  }
+}
+
+function getData(element, segments) {
+  var hLevel = parseInt(element.nodeName.substring(1), 10),
+    hIndex = parseInt(element.nodeName.substring(1)) - 1,
+    hText = $(element).text();
+
+  // Just found a levelUp event
+  if (segments.length - 1 > hIndex) {
+    segments = segments.slice(0, hIndex + 1);
+  }
+
+  // Just found a levelDown event
+  if (segments[hIndex] == undefined) {
+    segments[hIndex] = 0;
+  }
+
+  // count + 1 at current level
+  segments[hIndex]++;
+
+  return {
+    hLevel: hLevel,
+    hIndex: hIndex,
+    hText: hText,
+    segments: segments
+  };
+}
+
+    </script>
 @endsection

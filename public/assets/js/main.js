@@ -16,6 +16,27 @@
     $(window).on('load', function () {
         dataBackgroundImage();
     });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                event.preventDefault();  // Ngăn chặn hành động mặc định của liên kết
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    // Cuộn tới phần tử đó một cách mượt mà
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Thay đổi hash mà không làm mới trang
+                    history.pushState(null, null, '#' + targetId);
+                }
+            });
+        });
+    });    
+
+
     
     /*---stickey menu---*/
     $(window).on('scroll',function() {    
