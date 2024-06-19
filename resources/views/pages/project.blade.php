@@ -12,18 +12,19 @@
         width: 100%;
         height: auto;
     }
-    .thumbnails {
+    .thumbnail-carousel .owl-item {
         display: flex;
         justify-content: center;
-        margin-top: 10px;
+        align-items: center;
+        padding: 5px;
     }
-    .thumbnails img {
-        width: 100px;
+    .thumbnail-carousel .owl-item img {
+        width: 100%;
         height: auto;
+        object-fit: cover;
         cursor: pointer;
-        margin: 0 5px;
     }
-    .thumbnails img.active {
+    .thumbnail-carousel .owl-item.active img {
         border: 2px solid #000;
     }
 </style>
@@ -253,9 +254,8 @@ segments: segments
         });
 
         var thumbnailCarousel = $(".thumbnail-carousel").owlCarousel({
-            items: 4,
+            items: 5,
             loop: false,
-            margin: 10,
             nav: false,
             dots: false
         });
