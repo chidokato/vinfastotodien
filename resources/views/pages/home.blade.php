@@ -40,19 +40,19 @@
                         <p>CHÚNG TÔI LUÔN GIỮ VỮNG NHỮNG CAM KẾT VỚI QUÝ KHÁCH HÀNG</p>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-md-4 col-12">
                     <a class="a1222" href="">
                         <div class="img"><img src="assets/img/icon/doller-icon.png"></div>
                         <span>Yêu cầu báo giá</span>
                     </a>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-md-4 col-12 ">
                     <a class="a1222" href="">
                         <div class="img"><img src="assets/img/icon/procedure.png"></div>
                         <span>Thủ tục trả góp</span>
                     </a>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-md-4 col-12 ">
                     <a class="a1222" href="">
                         <div class="img"><img src="assets/img/icon/car-icon.png"></div>
                         <span>Bảng giá xe VinFast</span>

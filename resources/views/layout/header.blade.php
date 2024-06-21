@@ -10,8 +10,8 @@
                         <div class="main_menu header_position">
                             <nav>
                                 <ul>
-                                    <li><a class="header_logo" href="."><img src="assets/img/logo/logo-vinfast.webp"></a></li>
-                                    <li><a href=".">Trang chủ</a></li>
+                                    <li><a class="header_logo" href="{{asset('')}}"><img src="assets/img/logo/logo-vinfast.webp"></a></li>
+                                    <li><a href="asset('')">Trang chủ</a></li>
                                     @foreach($menu as $key => $val)
                                     @if($key==0)
                                     <?php $sub_menu = Menu::where('parent', $val->id)->get(); ?>
@@ -59,7 +59,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <a href=""><img src="assets/img/logo/logo-vinfast.webp"></a>
+                    <a class="logo" href="{{asset('')}}"><img src="assets/img/logo/logo-vinfast.webp"></a>
                     <div class="canvas_open">
                         <span></span>
                         <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
@@ -70,67 +70,45 @@
                             <a href="#"><i class="ion-android-close"></i></a>
                         </div>
 
-                        <div class="top_right text-end">
-                            <ul>
-                                <li class="top_links"><a href="#"><i class="ion-android-person"></i> My Account<i class="ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_links">
-                                        <li><a href="checkout.html">Checkout </a></li>
-                                        <li><a href="my-account.html">My Account </a></li>
-                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="Offcanvas_follow">
                             <label>Follow Us:</label>
                             <ul class="follow_link">
                                 <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
                                 <li><a href="#"><i class="ion-social-youtube"></i></a></li>
                             </ul>
                         </div>
-                        <div class="search-container">
+                        <!-- <div class="search-container">
                             <form action="#">
                                 <div class="search_box">
                                     <input placeholder="Search entire store here ..." type="text">
                                     <button type="submit"><i class="ion-ios-search-strong"></i></button>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                         <div id="menu" class="text-left ">
                             <ul class="offcanvas_main_menu">
                                 <li class="menu-item-has-children">
-                                    <a href="index.html">Trang chủ</a>
+                                    <a href="{{asset('')}}">Trang chủ</a>
                                 </li>
+                                @foreach($menu as $key => $val)
+                                @if($key==0)
+                                <?php $sub_menu = Menu::where('parent', $val->id)->get(); ?>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Shop</a>
+                                    <a href="{{$val->slug}}">{{$val->name}}</a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Shop Layouts</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shop.html">shop</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">other Pages</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="cart.html">cart</a></li>
-                                            </ul>
-                                        </li>
-                                        
+                                        @foreach($sub_menu as $sub)
+                                        <li><a href="{{$sub->slug}}">{{$sub->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
+                                @else
                                 <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog details</a></li>
-                                        <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                        <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                    </ul>
+                                    <a href="{{$val->slug}}">{{$val->name}}</a>
                                 </li>
+                                @endif
+                                @endforeach
+
+                                
                                 
                             </ul>
                         </div>

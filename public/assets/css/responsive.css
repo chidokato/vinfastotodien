@@ -1,0 +1,24 @@
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 820px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .header_area{ padding:5px }
+    .Offcanvas_menu{ position:relative; text-align:center; border-bottom:1px solid #ddd; padding-bottom:10px; margin-bottom:0 }
+    .Offcanvas_menu .logo img{ height:50px }
+    .canvas_open{ position:absolute; left:20px; top:0; bottom:0; margin:auto; }
+    .section0 .title-home h1{ font-size:1.3rem }
+    .section0 .title-home p{ font-size:.7rem }
+}
+
+
+@media screen and (max-width: 480px) {
+    .slider_area .single_slider img, .slider_area .single_slider{ height:25vh }
+    .section0 .content-home ul li{ margin-bottom:5px }
+    .section0 .content-home h2{ font-size:1rem; line-height:24px }
+    .section0 { padding:20px 0; }
+}

@@ -689,7 +689,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .canvas_open {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #f0f0f0;
   padding: 7px 20px 6px;
 }
 .canvas_open span {
@@ -698,7 +697,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 27px;
 }
 .canvas_open a {
-  font-size: 28px;
+  font-size: 36px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

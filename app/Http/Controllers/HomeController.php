@@ -69,6 +69,10 @@ class HomeController extends Controller
                 'data',
                 'cat',
             ));
+        }elseif($slug == 'thu-tuc-tra-gop'){
+            return view('pages.tragop', compact(
+                'data',
+            ));
         }elseif($slug == 'lien-he'){
             return view('pages.contact', compact(
                 'data',
@@ -77,6 +81,13 @@ class HomeController extends Controller
             if ($data->sort_by == 'Product') {
                 $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(30);
                 return view('pages.category', compact(
+                    'data',
+                    'post',
+                ));
+            }
+            if ($data->sort_by == 'News') {
+                $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(30);
+                return view('pages.news', compact(
                     'data',
                     'post',
                 ));
