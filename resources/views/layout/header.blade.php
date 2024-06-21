@@ -11,7 +11,7 @@
                             <nav>
                                 <ul>
                                     <li><a class="header_logo" href="{{asset('')}}"><img src="assets/img/logo/logo-vinfast.webp"></a></li>
-                                    <li><a href="asset('')">Trang chủ</a></li>
+                                    <li><a href="{{asset('')}}">Trang chủ</a></li>
                                     @foreach($menu as $key => $val)
                                     @if($key==0)
                                     <?php $sub_menu = Menu::where('parent', $val->id)->get(); ?>
