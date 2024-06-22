@@ -162,7 +162,7 @@
     </script>
 
     <!-- zoom ảnh -->
-    <script src="admin_asset/zoom/zoom.js"></script>
+    <!-- <script src="admin_asset/zoom/zoom.js"></script> -->
     <!-- <script src="admin_asset/js/js.js"></script> -->
     <script src="admin_asset/js/custom.js"></script>
     <!-- validate -->

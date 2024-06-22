@@ -36,4 +36,13 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+
+	config.filebrowserImageUploadUrl = '/laravel-filemanager/upload?type=Images';
+    config.fileTools_requestHeaders = {
+        Accept: 'image/jpeg, image/png, image/gif, image/webp'
+    };
+
+    // Hoặc nếu bạn muốn cho phép định dạng webp khi chèn hình ảnh
+    config.extraAllowedContent = 'img[src,alt,width,height,title,!webp]';
 };
