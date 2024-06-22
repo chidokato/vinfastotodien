@@ -7,35 +7,7 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-<style>
-    .owl-item img {
-        width: 100%;
-        height: auto;
-    }
-    .thumbnail-carousel .owl-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-    }
-    .thumbnail-carousel .owl-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        cursor: pointer;
-    }
-    .thumbnail-carousel .owl-item.active img {
-        border: 2px solid #000;
-    }
-
-    .nav-link.active {
-        color: red;
-    }
-
-    .product_info_content img{ height:auto !important; }
-    }
-        
-</style>
+<link rel="stylesheet" href="assets/css/project.css">
 @endsection
 
 @section('content')

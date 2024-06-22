@@ -1,0 +1,28 @@
+.owl-item img {
+        width: 100%;
+        height: auto;
+    }
+    .thumbnail-carousel .owl-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    .thumbnail-carousel .owl-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    .thumbnail-carousel .owl-item.active img {
+        border: 2px solid #000;
+    }
+
+    .nav-link.active {
+        color: red;
+    }
+
+    .product_info_content img{ height:auto !important; }
+    .product_d_right .product_desc{
+        height: 300px; overflow: auto;
+    }
