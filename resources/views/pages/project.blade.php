@@ -27,6 +27,14 @@
     .thumbnail-carousel .owl-item.active img {
         border: 2px solid #000;
     }
+
+    .nav-link.active {
+        color: red;
+    }
+
+    .product_info_content img{ height:auto !important; }
+    }
+        
 </style>
 @endsection
 
@@ -206,7 +214,7 @@ segments = data.segments;
 html +=
 '<p class="heading-' +
 data.hLevel +
-'"><a href="{{$post->category->slug}}/{{$post->slug}}#' +
+'"><a class="nav-link" href="{{$post->category->slug}}/{{$post->slug}}#' +
 hId +
 '">' +
 data.hText +
@@ -239,6 +247,37 @@ segments: segments
 };
 }
 // tạo menu tự động từ h2 h3
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const sections = document.querySelectorAll('h2[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        // alert(navLinks);
+        function onScroll() {
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionHeight = section.clientHeight;
+                
+                if (sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight >= 0) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', onScroll);
+        onScroll(); // Call onScroll to set the initial state
+    });
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
@@ -275,5 +314,7 @@ segments: segments
         });
     });
 </script>
+
+
 
 @endsection
