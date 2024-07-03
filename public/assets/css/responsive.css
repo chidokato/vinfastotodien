@@ -22,4 +22,5 @@
     .section0 .content-home h2{ font-size:1rem; line-height:24px }
     .section0 { padding:20px 0; }
     .product_d_inner{ padding: 20px 10px 50px; }
+    .mySwiper .swiper-slide img{ height:60px !important }
 }
