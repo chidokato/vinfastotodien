@@ -124,138 +124,142 @@
 <div class="product_d_info">
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-lg-8 col-md-8">
                 <div class="product_d_inner">
                     <div class="">
                         <div class="">
                             <div class="product_info_content page-content">
                                 <h2>Giá lăn bánh (<strong>Chưa</strong> bao gồm PIN)</h2>
                                 <p>Giá tạm tính tại thời điểm này. Mức phí có thể khác nhau ở các tỉnh. Vui lòng liên hệ hotline <a href="tel:{{$setting->hotline}}">{{$setting->hotline}} </a> để được tư vấn và gửi báo giá xe lăn bánh chính sách nhất.</p>
-                                <table>
-                                    <tr style="background: #135EAC; color: #fff;">
-                                        <th>Phí</th>
-                                        <th>Hà Nội</th>
-                                        <th>Hồ Chí Minh</th>
-                                        <th>Hồ Chí Minh</th>
-                                        <th>Các tỉnh khác</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Giá niêm yết</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí trước bạ</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí đăng kiểm</td>
-                                        <td>340.000</td>
-                                        <td>340.000</td>
-                                        <td>340.000</td>
-                                        <td>340.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí bảo trì đường bộ</td>
-                                        <td>1.560.000</td>
-                                        <td>1.560.000</td>
-                                        <td>1.560.000</td>
-                                        <td>1.560.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bảo hiểm trách nhiệm dân sự</td>
-                                        <td>437.000</td>
-                                        <td>437.000</td>
-                                        <td>437.000</td>
-                                        <td>437.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí biển số</td>
-                                        <td>20.000.000</td>
-                                        <td>20.000.000</td>
-                                        <td>1.000.000</td>
-                                        <td>1.000.000</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Tổng</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
-                                    </tr>
-                                </table>
+                                <div style="overflow: auto;">
+                                    <table>
+                                        <tr style="background: #135EAC; color: #fff;">
+                                            <th>Phí</th>
+                                            <th>Hà Nội</th>
+                                            <th>Hồ Chí Minh</th>
+                                            <th>Hồ Chí Minh</th>
+                                            <th>Các tỉnh khác</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Giá niêm yết</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí trước bạ</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí đăng kiểm</td>
+                                            <td>340.000</td>
+                                            <td>340.000</td>
+                                            <td>340.000</td>
+                                            <td>340.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí bảo trì đường bộ</td>
+                                            <td>1.560.000</td>
+                                            <td>1.560.000</td>
+                                            <td>1.560.000</td>
+                                            <td>1.560.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bảo hiểm trách nhiệm dân sự</td>
+                                            <td>437.000</td>
+                                            <td>437.000</td>
+                                            <td>437.000</td>
+                                            <td>437.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí biển số</td>
+                                            <td>20.000.000</td>
+                                            <td>20.000.000</td>
+                                            <td>1.000.000</td>
+                                            <td>1.000.000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tổng</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <h2>Giá lăn bánh (<strong>Đã</strong> bao gồm PIN)</h2>
                                 <p>Giá tạm tính tại thời điểm này. Mức phí có thể khác nhau ở các tỉnh. Vui lòng liên hệ hotline <a href="tel:{{$setting->hotline}}">{{$setting->hotline}} </a> để được tư vấn và gửi báo giá xe lăn bánh chính sách nhất.</p>
-                                <table>
-                                    <tr style="background: #135EAC; color: #fff;">
-                                        <th>Phí</th>
-                                        <th>Hà Nội</th>
-                                        <th>Hồ Chí Minh</th>
-                                        <th>Hồ Chí Minh</th>
-                                        <th>Các tỉnh khác</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Giá niêm yết</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                        <td>{{number_format($post->price)}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí trước bạ</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí đăng kiểm</td>
-                                        <td>340.000</td>
-                                        <td>340.000</td>
-                                        <td>340.000</td>
-                                        <td>340.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí bảo trì đường bộ</td>
-                                        <td>1.560.000</td>
-                                        <td>1.560.000</td>
-                                        <td>1.560.000</td>
-                                        <td>1.560.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bảo hiểm trách nhiệm dân sự</td>
-                                        <td>437.000</td>
-                                        <td>437.000</td>
-                                        <td>437.000</td>
-                                        <td>437.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí biển số</td>
-                                        <td>20.000.000</td>
-                                        <td>20.000.000</td>
-                                        <td>1.000.000</td>
-                                        <td>1.000.000</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Tổng</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
-                                        <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
-                                    </tr>
-                                </table>
+                                <div style="overflow: auto;">
+                                    <table>
+                                        <tr style="background: #135EAC; color: #fff;">
+                                            <th>Phí</th>
+                                            <th>Hà Nội</th>
+                                            <th>Hồ Chí Minh</th>
+                                            <th>Hồ Chí Minh</th>
+                                            <th>Các tỉnh khác</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Giá niêm yết</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                            <td>{{number_format($post->price)}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí trước bạ</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí đăng kiểm</td>
+                                            <td>340.000</td>
+                                            <td>340.000</td>
+                                            <td>340.000</td>
+                                            <td>340.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí bảo trì đường bộ</td>
+                                            <td>1.560.000</td>
+                                            <td>1.560.000</td>
+                                            <td>1.560.000</td>
+                                            <td>1.560.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bảo hiểm trách nhiệm dân sự</td>
+                                            <td>437.000</td>
+                                            <td>437.000</td>
+                                            <td>437.000</td>
+                                            <td>437.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí biển số</td>
+                                            <td>20.000.000</td>
+                                            <td>20.000.000</td>
+                                            <td>1.000.000</td>
+                                            <td>1.000.000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tổng</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 20000000)}}</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
+                                            <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
+                                        </tr>
+                                    </table>
+                                </div>
                                 {!! $post->content !!}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4">
                 <div class="fix-sticky">
                     <div class="product_d_inner ">
                         <div class="js-table-of-content table-of-content "></div>
