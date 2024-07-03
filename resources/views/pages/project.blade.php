@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style type="text/css">
-    
+
 </style>
 @endsection
 
@@ -36,7 +36,7 @@
 <!--breadcrumbs area end-->
 
 <!--product details start-->
-<div class="product_details variable_product mt-20">
+<div class="product_details variable_product">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7">
