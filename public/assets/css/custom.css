@@ -91,7 +91,9 @@
 .product_d_info .product_d_inner h2::after{ content:""; width:50px; height:3px; background:#a70418; position:absolute; left:0; bottom:0px }
 .product_d_info .product_d_inner table{ width:100%; border:none; margin-bottom:20px }
 .product_d_info .product_d_inner th{ border:1px solid #ddd; padding:5px 10px; text-align:center; font-weight:bold; }
-.product_d_info .product_d_inner td{ border:1px solid #ddd; padding:5px 10px; text-align:center; }
+.product_d_info .product_d_inner td{ border:1px solid #ddd; padding:5px 10px; text-align:center;     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
 .product_d_info .product_d_inner td *{ padding:0; margin:0 }
 .fix-sticky{ position: sticky; top: 75px }
 
