@@ -6,8 +6,71 @@
 @section('url'){{asset('')}}@endsection
 
 @section('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
 <link rel="stylesheet" href="assets/css/project.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style type="text/css">
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper {
+      width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mySwiper2 {
+      height: 80%;
+      width: 100%;
+    }
+
+    .mySwiper {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .mySwiper .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .mySwiper .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -36,17 +99,36 @@
         <div class="row">
             <div class="col-lg-7 col-md-7">
                 <div class="product-details-tab">
-                    <!-- <div id="sync1" class="owl-carousel owl-theme">
-                        <div class="item">
-                            <img src="data/product/{{$post->img}}">
+                    
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="data/product/{{$post->img}}" />
+                            </div>
+                            @foreach($images as $val)
+                            <div class="swiper-slide">
+                                <img src="data/product/detail/{{$val->img}}" />
+                            </div>
+                            @endforeach
                         </div>
-                        @foreach($images as $val)
-                        <div class="item">
-                            <img src="data/product/detail/{{$val->img}}" alt="">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="data/product/{{$post->img}}" />
+                            </div>
+                            @foreach($images as $val)
+                            <div class="swiper-slide">
+                                <img src="data/product/detail/{{$val->img}}" />
+                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
-                    </div> -->
-                    <div class="main-carousel owl-carousel">
+                    </div>
+
+
+                    <!-- <div class="main-carousel owl-carousel">
                         <div> <img src="data/product/{{$post->img}}" alt="Image 1"> </div>
                         @foreach($images as $val)
                         <div> <img src="data/product/detail/{{$val->img}}" alt="Image 1"> </div>
@@ -57,7 +139,7 @@
                         @foreach($images as $key => $val)
                         <img src="data/product/detail/{{$val->img}}" alt="Thumbnail 1" data-index="{{$key+1}}">
                         @endforeach
-                    </div>
+                    </div> -->
                 
                 </div>
             </div>
@@ -379,41 +461,27 @@ segments: segments
     });
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function() {
-        var mainCarousel = $(".main-carousel").owlCarousel({
-            items: 1,
-            loop: true,
-            margin: 10,
-            nav: true,
-            dots: false
-        });
 
-        var thumbnailCarousel = $(".thumbnail-carousel").owlCarousel({
-            items: 5,
-            loop: false,
-            nav: false,
-            dots: false
-        });
-
-        $(".thumbnail-carousel .owl-item").on("click", function() {
-            var index = $(this).find("img").data("index");
-            mainCarousel.trigger("owl.goTo", index);
-            $(".thumbnail-carousel .owl-item").removeClass("active");
-            $(this).addClass("active");
-        });
-
-        mainCarousel.on("changed.owl.carousel", function(event) {
-            var index = event.item.index;
-            $(".thumbnail-carousel .owl-item").removeClass("active");
-            $(".thumbnail-carousel .owl-item").eq(index).addClass("active");
-            var thumbnailIndex = $(".thumbnail-carousel .owl-item.active").index();
-            thumbnailCarousel.trigger("owl.goTo", thumbnailIndex - 1);
-        });
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
     });
-</script>
-
+    var swiper2 = new Swiper(".mySwiper2", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+  </script>
 
 
 @endsection
