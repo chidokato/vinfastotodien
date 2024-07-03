@@ -40,20 +40,20 @@
                         <p>CHÚNG TÔI LUÔN GIỮ VỮNG NHỮNG CAM KẾT VỚI QUÝ KHÁCH HÀNG</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <a class="a1222" href="">
+                <div class="col-lg-4 col-md-4 col-12 click_popup">
+                    <a class="a1222" href="javascript:void(0)">
                         <div class="img"><img src="assets/img/icon/doller-icon.png"></div>
                         <span>Yêu cầu báo giá</span>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-12 ">
-                    <a class="a1222" href="">
+                    <a class="a1222" href="thu-tuc-tra-gop">
                         <div class="img"><img src="assets/img/icon/procedure.png"></div>
                         <span>Thủ tục trả góp</span>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-12 ">
-                    <a class="a1222" href="">
+                    <a class="a1222" href="bang-gia-xe-vinfast">
                         <div class="img"><img src="assets/img/icon/car-icon.png"></div>
                         <span>Bảng giá xe VinFast</span>
                     </a>
@@ -69,14 +69,17 @@
                     <div class="content-home">
                         {!! $setting->content_home !!}
                         <div class="contact">
-                            <a href="">
-                                <span>Hotline: 0822.48.3333</span>
+                            <a href="tel:{{$setting->hotline}}">
+                                <span>Hotline: {{$setting->hotline}}</span>
                                 <span><i>Click gọi ngay để có giá xe tốt nhất</i></span>
                             </a>
-                            <a href="">
-                                <span>NHẬN BÁO GIÁ XE</span>
-                                <span><i>Hoặc đăng ký nhận báo giá xe lăn bánh tốt nhất</i></span>
-                            </a>
+                            <div class="click_popup">
+                                <a href="javascript:void(0)">
+                                    <span>NHẬN BÁO GIÁ XE</span>
+                                    <span><i>Hoặc đăng ký nhận báo giá xe lăn bánh tốt nhất</i></span>
+                                </a>
+                            </div>
+                            
                         </div>
                         <p>Liên Hệ: Lái thử và trải nghiệm miễn phí và nhận nhiều Khuyến Mãi hấp dẫn khác, liên hệ trực tiếp với Phòng Bán Hàng để mua xe với giá tốt nhất!</p>
                         <p>Xe VinFast có sẵn nhiều màu để lựa chọn - Nhiều ưu đãi cho khách hàng - Phương thức thanh toán linh hoạt, phù hợp: trả thẳng, trả góp với lãi suất ưu đãi. Hỗ trợ lãi suất vay chỉ 8% trong 18 tháng. QUÝ KHÁCH XIN VUI LÒNG LIÊN HỆ với Phòng Bán Hàng để mua xe với giá tốt nhất!</p>

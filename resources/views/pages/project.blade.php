@@ -91,19 +91,23 @@
                                 <span>Phụ trách kinh doanh</span>
                                 <span class="info-text">0985.075.533</span>
                             </a>
-                            <a class="btn btn-big btn-request" href="">
-                                <span>Gửi liên hệ</span>
-                                <span class="info-text">Yêu cầu báo giá</span>
-                            </a>
+                            <div class="click_popup">
+                                <a class="btn btn-big btn-request" href="javascript:void(0)">
+                                    <span>Gửi liên hệ</span>
+                                    <span class="info-text">Yêu cầu báo giá</span>
+                                </a>
+                            </div>
                         </div>
                         <div class="col-6">
-                            <a class="btn btn-big btn-test-driver" href="">
-                                <span>Gửi liên hệ</span>
-                                <span class="info-text">Đăng ký lái thử</span>
-                            </a>
-                            <a class="btn btn-big btn-calculator" href="">
+                            <div class="click_popup">
+                                <a class="btn btn-big btn-test-driver" href="javascript:void(0)">
+                                    <span>Gửi liên hệ</span>
+                                    <span class="info-text">Đăng ký lái thử</span>
+                                </a>
+                            </div>
+                            <a class="btn btn-big btn-calculator" href="bang-gia-xe-vinfast">
                                 <span>Tham khảo</span>
-                                <span class="info-text">Chi phí lăn bánh</span>
+                                <span class="info-text">Bảng giá xe</span>
                             </a>
                         </div>
                     </div>

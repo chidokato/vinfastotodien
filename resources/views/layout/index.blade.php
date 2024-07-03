@@ -74,6 +74,13 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 
     @yield('css')
+
+    <style type="text/css">
+        .fixd-right{ position:fixed; left:20px; bottom:20px; z-index:99999 }
+        .fixd-right ul li{ margin-top:10px }
+        .fixd-right ul li a{}
+        .fixd-right ul li a img{ width:50px; background:#fff; border-radius:100% }
+    </style>
     
 </head>
 
@@ -81,6 +88,14 @@
     @include('layout.header')
     @yield('content')
     @include('layout.footer')
+    
+    <div class="fixd-right">
+        <ul>
+            <li class="click_popup"><a href="javascript:void(0)"><img src="assets/img/icon/icon-usd.png"></a></li>
+            <li><a href="tel:{{$setting->hotline}}"><img src="assets/img/icon/phone.png"></a></li>
+            <li><a href=""><img src="assets/img/icon/zalo.jpg"></a></li>
+        </ul>
+    </div>
 
 
     <!-- JS
@@ -138,6 +153,8 @@
         {{ Session::get('success') }}
     </div>
     @endif
+
+    @include('layout.popup')
 
 </body>
 

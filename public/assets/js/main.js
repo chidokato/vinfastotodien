@@ -517,15 +517,16 @@
     
     
      /*---mini cart activation---*/
-    $('.mini_cart_wrapper > a').on('click', function(){
+    $('.click_popup > a').on('click', function(){
         $('.mini_cart,.off_canvars_overlay').addClass('active')
     });
     
     $('.mini_cart_close,.off_canvars_overlay').on('click', function(){
         $('.mini_cart,.off_canvars_overlay').removeClass('active')
     });
+
     
-    
+
     /*categories slideToggle*/
     $(".categories_title").on("click", function() {
         $(this).toggleClass('active');
