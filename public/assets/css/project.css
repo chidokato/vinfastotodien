@@ -53,3 +53,9 @@
     .mySwiper .swiper-slide-thumb-active {
       opacity: 1;
     }
+
+
+@media screen and (max-width: 480px) {
+    .swiper-slide img{ height:280px }
+    .mySwiper .swiper-slide img{ height:60px }
+}
