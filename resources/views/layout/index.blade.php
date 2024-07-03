@@ -76,7 +76,7 @@
     @yield('css')
 
     <style type="text/css">
-        .fixd-right{ position:fixed; left:20px; bottom:20px; z-index:99999 }
+        .fixd-right{ position:fixed; left:20px; bottom:20px; z-index:98 }
         .fixd-right ul li{ margin-top:10px }
         .fixd-right ul li a{}
         .fixd-right ul li a img{ width:50px; background:#fff; border-radius:100% }
@@ -93,7 +93,7 @@
         <ul>
             <li class="click_popup"><a href="javascript:void(0)"><img src="assets/img/icon/icon-usd.png"></a></li>
             <li><a href="tel:{{$setting->hotline}}"><img src="assets/img/icon/phone.png"></a></li>
-            <li><a href=""><img src="assets/img/icon/zalo.jpg"></a></li>
+            <li><a href="https://zalo.me/{{$setting->hotline}}"><img src="assets/img/icon/zalo.jpg"></a></li>
         </ul>
     </div>
 
