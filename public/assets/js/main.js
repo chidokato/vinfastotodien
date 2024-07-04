@@ -4,13 +4,13 @@
     new WOW().init();  
 
     /*---background image---*/
-	function dataBackgroundImage() {
-		$('[data-bgimg]').each(function () {
-			var bgImgUrl = $(this).data('bgimg');
-			$(this).css({
-				'background-image': 'url(' + bgImgUrl + ')', // + meaning concat
-			});
-		});
+    function dataBackgroundImage() {
+        $('[data-bgimg]').each(function () {
+            var bgImgUrl = $(this).data('bgimg');
+            $(this).css({
+                'background-image': 'url(' + bgImgUrl + ')', // + meaning concat
+            });
+        });
     }
     
     $(window).on('load', function () {
@@ -35,7 +35,7 @@
     $('.slider_area').owlCarousel({
         animateOut: 'fadeOut',
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: false,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -47,7 +47,7 @@
        $('.product_column5').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -56,32 +56,32 @@
         dots:false,
         navText: ['<i class="ion-ios-arrow-thin-left"></i>','<i class="ion-ios-arrow-thin-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             576:{
-				items:2,
-			},
+                items:2,
+            },
             768:{
-				items:3,
-			},
+                items:3,
+            },
             992:{
-				items:4,
-			},
+                items:4,
+            },
             1200:{
-				items:5,
-			},
+                items:5,
+            },
 
 
-		  }
+          }
     });
     
     /*---product column4 activation---*/
        $('.product_column4').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -90,22 +90,22 @@
         dots:false,
         navText: ['<i class="ion-ios-arrow-thin-left"></i>','<i class="ion-ios-arrow-thin-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             576:{
-				items:2,
-			},
+                items:2,
+            },
             768:{
-				items:3,
-			},
+                items:3,
+            },
             992:{
-				items:4,
-			},
+                items:4,
+            },
 
 
-		  }
+          }
     });
     
     
@@ -113,7 +113,7 @@
        $('.product_sidebar_column4').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -122,53 +122,53 @@
         dots:false,
         navText: ['<i class="ion-ios-arrow-thin-left"></i>','<i class="ion-ios-arrow-thin-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             576:{
-				items:2,
-			},
+                items:2,
+            },
             768:{
-				items:3,
-			},
+                items:3,
+            },
                 
             1200:{
-				items:4,
-			},
-		  }
+                items:4,
+            },
+          }
     });
     
     /*---featured column3 activation---*/
     $('.featured_column3').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: false,
         autoplay: false,
         autoplayTimeout: 8000,
         items: 3,
         dots:false,
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             768:{
-				items:2,
-			},
+                items:2,
+            },
             992:{
-				items:3,
-			},
+                items:3,
+            },
 
-		  }
+          }
     });
     
 
     /*---product column3 activation---*/
     $('.product_column3').owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -177,24 +177,24 @@
         dots:false,
         navText: ['<i class="ion-ios-arrow-thin-left"></i>','<i class="ion-ios-arrow-thin-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             768:{
-				items:2,
-			},
+                items:2,
+            },
             992:{
-				items:3,
-			},
+                items:3,
+            },
 
-		  }
+          }
     });
     
     /*---product column2 activation---*/
     $('.product_column2').owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -203,18 +203,18 @@
         dots:false,
         navText: ['<i class="ion-ios-arrow-thin-left"></i>','<i class="ion-ios-arrow-thin-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             768:{
-				items:1,
+                items:1,
                 margin:0,
-			},
+            },
              992:{
-				items:2,
-			},   
-		  }
+                items:2,
+            },   
+          }
     });
     
     $('#nav-tab a,#nav-tab2 a').on('click', function (e) {
@@ -225,7 +225,7 @@
     /*---product column4 activation---*/
     $('.blog_column4').owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -234,26 +234,26 @@
         dots:false,
         navText: ['<i class="ion-ios-arrow-thin-left"></i>','<i class="ion-ios-arrow-thin-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             768:{
-				items:3,
-			},
+                items:3,
+            },
              992:{
-				items:3,
-			}, 
+                items:3,
+            }, 
             1200:{
-				items:4,
-			}, 
-		  }
+                items:4,
+            }, 
+          }
     });
     
     /*---blog thumb activation---*/
     $('.blog_thumb_active').owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -266,31 +266,31 @@
      $('.brand_container').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: false,
         autoplay: false,
         autoplayTimeout: 8000,
         items: 5,
         dots:false,
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             480:{
-				items:2,
-			},
+                items:2,
+            },
             768:{
-				items:3,
-			},
+                items:3,
+            },
             992:{
-				items:4,
-			},
+                items:4,
+            },
             1200:{
-				items:5,
-			},
+                items:5,
+            },
 
-		  }
+          }
     });
     
     /*---small product activation---*/
@@ -328,7 +328,7 @@
     /*---single product activation---*/
     $('.single-product-active').owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -337,28 +337,28 @@
         dots:false,
         navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             320:{
-				items:2,
-			},
+                items:2,
+            },
             992:{
-				items:3,
-			},
+                items:3,
+            },
             1200:{
-				items:4,
-			},
+                items:4,
+            },
 
 
-		  }
+          }
     });
  
     /*---testimonial active activation---*/
     $('.testimonial_active').owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: false,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -369,7 +369,7 @@
     /*---product navactive activation---*/
     $('.product_navactive').owlCarousel({
         autoplay: true,
-		loop: true,
+        loop: true,
         nav: true,
         autoplay: false,
         autoplayTimeout: 8000,
@@ -377,20 +377,20 @@
         dots:false,
         navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
         responsiveClass:true,
-		responsive:{
-				0:{
-				items:1,
-			},
+        responsive:{
+                0:{
+                items:1,
+            },
             250:{
-				items:2,
-			},
+                items:2,
+            },
             480:{
-				items:3,
-			},
+                items:3,
+            },
             768:{
-				items:4,
-			},
-		  
+                items:4,
+            },
+          
         }
     });
 
@@ -444,8 +444,8 @@
       },
       close: function() {
         this.slideUp(300);
-      }		
-    });	  
+      }     
+    });   
 
    
 
@@ -458,14 +458,14 @@
     });   
     
     /*---countdown activation---*/
-		
-	 $('[data-countdown]').each(function() {
-		var $this = $(this), finalDate = $(this).data('countdown');
-		$this.countdown(finalDate, function(event) {
-		$this.html(event.strftime('<div class="countdown_area"><div class="single_countdown"><div class="countdown_number">%D</div><div class="countdown_title">Days</div></div><div class="single_countdown"><div class="countdown_number">%H</div><div class="countdown_title">Hours</div></div><div class="single_countdown"><div class="countdown_number">%M</div><div class="countdown_title">Mins</div></div><div class="single_countdown"><div class="countdown_number">%S</div><div class="countdown_title">Secs</div></div></div>'));     
+        
+     $('[data-countdown]').each(function() {
+        var $this = $(this), finalDate = $(this).data('countdown');
+        $this.countdown(finalDate, function(event) {
+        $this.html(event.strftime('<div class="countdown_area"><div class="single_countdown"><div class="countdown_number">%D</div><div class="countdown_title">Days</div></div><div class="single_countdown"><div class="countdown_number">%H</div><div class="countdown_title">Hours</div></div><div class="single_countdown"><div class="countdown_number">%M</div><div class="countdown_title">Mins</div></div><div class="single_countdown"><div class="countdown_number">%S</div><div class="countdown_title">Secs</div></div></div>'));     
                
        });
-	});	
+    }); 
     
     /*---slider-range here---*/
     $( "#slider-range" ).slider({
@@ -535,21 +535,21 @@
 
     
    /*----------  Category more toggle  ----------*/
-	$(".categories_menu_toggle li.hidden").hide();
-	   $("#more-btn").on('click', function (e) {
+    $(".categories_menu_toggle li.hidden").hide();
+       $("#more-btn").on('click', function (e) {
 
-		e.preventDefault();
-		$(".categories_menu_toggle li.hidden").toggle(500);
-		var htmlAfter = '<i class="fa fa-minus" aria-hidden="true"></i> Less Categories';
-		var htmlBefore = '<i class="fa fa-plus" aria-hidden="true"></i> More Categories';
+        e.preventDefault();
+        $(".categories_menu_toggle li.hidden").toggle(500);
+        var htmlAfter = '<i class="fa fa-minus" aria-hidden="true"></i> Less Categories';
+        var htmlBefore = '<i class="fa fa-plus" aria-hidden="true"></i> More Categories';
 
 
-		if ($(this).html() == htmlBefore) {
-			$(this).html(htmlAfter);
-		} else {
-			$(this).html(htmlBefore);
-		}
-	});
+        if ($(this).html() == htmlBefore) {
+            $(this).html(htmlAfter);
+        } else {
+            $(this).html(htmlBefore);
+        }
+    });
     
     
     /*---MailChimp---*/
@@ -574,8 +574,8 @@
     
     
     /* ---------------------
-	 Category menu
-	--------------------- */
+     Category menu
+    --------------------- */
     
    
     function categorySubMenuToggle(){
@@ -606,31 +606,31 @@
     /*---shop grid activation---*/
     $('.shop_toolbar_btn > button').on('click', function (e) {
         
-		e.preventDefault();
+        e.preventDefault();
         
         $('.shop_toolbar_btn > button').removeClass('active');
-		$(this).addClass('active');
+        $(this).addClass('active');
         
-		var parentsDiv = $('.shop_wrapper');
-		var viewMode = $(this).data('role');
+        var parentsDiv = $('.shop_wrapper');
+        var viewMode = $(this).data('role');
         
         
-		parentsDiv.removeClass('grid_3 grid_4 grid_5 grid_list').addClass(viewMode);
+        parentsDiv.removeClass('grid_3 grid_4 grid_5 grid_list').addClass(viewMode);
 
-		if(viewMode == 'grid_3'){
-			parentsDiv.children().addClass('col-lg-4 col-md-4 col-sm-6').removeClass('col-lg-3 col-cust-5 col-12');
+        if(viewMode == 'grid_3'){
+            parentsDiv.children().addClass('col-lg-4 col-md-4 col-sm-6').removeClass('col-lg-3 col-cust-5 col-12');
             
-		}
+        }
 
-		if(viewMode == 'grid_4'){
-			parentsDiv.children().addClass('col-lg-3 col-md-4 col-sm-6').removeClass('col-lg-4 col-cust-5 col-12');
-		}
+        if(viewMode == 'grid_4'){
+            parentsDiv.children().addClass('col-lg-3 col-md-4 col-sm-6').removeClass('col-lg-4 col-cust-5 col-12');
+        }
         
         if(viewMode == 'grid_list'){
-			parentsDiv.children().addClass('col-12').removeClass('col-lg-3 col-lg-4 col-md-4 col-sm-6 col-cust-5');
-		}
+            parentsDiv.children().addClass('col-12').removeClass('col-lg-3 col-lg-4 col-md-4 col-sm-6 col-cust-5');
+        }
             
-	});
+    });
   
     
     
@@ -695,19 +695,19 @@
             }
         }
         if( $this.is('a') || $this.is('span') || $this.attr('clas').match(/\b(menu-expand)\b/) ){
-        	$this.parent().toggleClass('menu-open');
+            $this.parent().toggleClass('menu-open');
         }else if( $this.is('li') && $this.attr('class').match(/\b('menu-item-has-children')\b/) ){
-        	$this.toggleClass('menu-open');
+            $this.toggleClass('menu-open');
         }
     });
     
     
     /*js ripples activation*/
     $('.js-ripples').ripples({
-		resolution: 512,
-		dropRadius: 20,
-		perturbance: 0.04
-	});
+        resolution: 512,
+        dropRadius: 20,
+        perturbance: 0.04
+    });
     
     
     
@@ -771,4 +771,4 @@
     }
     
     
-})(jQuery);	
+})(jQuery); 
