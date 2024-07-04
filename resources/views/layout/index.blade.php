@@ -116,7 +116,7 @@
             </div>
         </div>
         <div class="hotline-bar">
-            <a href="https://zalo.me/{{$setting->hotline}}">
+            <a target="_blank" href="https://zalo.me/{{$setting->hotline}}">
                 <span class="text-hotline">{{$setting->hotline}}</span>
             </a>
         </div>
