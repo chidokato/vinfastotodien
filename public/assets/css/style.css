@@ -1185,8 +1185,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .mini_cart {
   position: fixed;
-  width: 355px;
-  padding: 18px 28px 33px;
+  width: 700px;
   background: #fff;
   z-index: 999;
   right: 0;
@@ -1197,7 +1196,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   transform: translateY(-100%);
 }
 .mini_cart.active {
-  transform: translateY(100%);
+  transform: translateY(100px);
   transition: .5s;
 }
 @media only screen and (max-width: 767px) {

@@ -22,4 +22,11 @@
     .section0 .content-home h2{ font-size:1rem; line-height:24px }
     .section0 { padding:20px 0; }
     .product_d_inner{ padding: 20px 10px 50px; }
+    .mini_cart{ height:auto; }
+    .fixd-right ul{ display:flex; justify-content: space-around; }
+    .fixd-right ul li{ margin-top:0px; background:#fff; padding:5px; border-radius:5px }
+    .fixd-right ul li a img{ width:30px }
+    .fixd-right ul li a{ font-weight:bold; }
+    .fixd-right{ width:100%; left:0; bottom:0; background:#0000004d; padding:5px }
+    .hidden-pc{ display:block; }
 }

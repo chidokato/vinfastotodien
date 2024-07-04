@@ -76,10 +76,7 @@
     @yield('css')
 
     <style type="text/css">
-        .fixd-right{ position:fixed; left:20px; bottom:20px; z-index:98 }
-        .fixd-right ul li{ margin-top:10px }
-        .fixd-right ul li a{}
-        .fixd-right ul li a img{ width:50px; background:#fff; border-radius:100% }
+        
     </style>
     
 </head>
@@ -91,10 +88,44 @@
     
     <div class="fixd-right">
         <ul>
-            <li class="click_popup"><a href="javascript:void(0)"><img src="assets/img/icon/icon-usd.png"></a></li>
-            <li><a href="tel:{{$setting->hotline}}"><img src="assets/img/icon/phone.png"></a></li>
-            <li><a href="https://zalo.me/{{$setting->hotline}}"><img src="assets/img/icon/zalo.jpg"></a></li>
+            <li class="click_popup"><a href="javascript:void(0)"><img src="assets/img/icon/pdf.jpg"> <div>Bảng giá</div></a>  </li>
+            <li><a href="tel:{{$setting->hotline}}"><img src="assets/img/icon/phone.png"> <div>Hotline</div></a> </li>
+            <li><a href="https://zalo.me/{{$setting->hotline}}"><img src="assets/img/icon/zalo.jpg"> <div>Zalo</div></a> </li>
         </ul>
+    </div>
+
+    <div class="mini_cart">
+        <div class="cart_close">
+            <div class="mini_cart_close">
+                <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
+            </div>
+        </div>
+        <div class="main-pupop">
+            <div class="img">
+                <img src="assets/img/about/pupop.jpg">
+            </div>        
+            <div class="form">
+                <h3>Nhận báo giá & Ưu đãi trong tháng</h3>
+                <p>Ngay sau khi nhận được yêu cầu Chúng tôi sẽ gửi Báo giá Ưu đãi đến Quý khách ngay!</p>
+                <form>
+                    <div>
+                        <label>Họ & Tên</label>
+                        <input type="text" class="" name="" placeholder="Họ & Tên">
+                    </div>
+                    <div>
+                        <label>Số điện thoại</label>
+                        <input type="text" class="" name="" placeholder="Số điện thoại">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="text" class="" name="" placeholder="Email">
+                    </div>
+                    <div>
+                        <button>Đăng ký ngay</button>
+                    </div>
+                </form>
+            </div>    
+        </div>
     </div>
 
 
