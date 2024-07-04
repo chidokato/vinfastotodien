@@ -184,7 +184,8 @@
 .form-ring-wrap .hotline-phone-ring-img-circle{ background-color: #135EAC; }
 
 @media (max-width: 768px) {
-  .hotline-bar {
-    display: none;
-  }
+  .hotline-bar {display: none;}
+  .zalo-ring-wrap{ bottom:-20px; left:100px }
+  .form-ring-wrap{ bottom:-20px; left:200px }
+  .hotline-phone-ring-wrap{ bottom:-20px }
 }
