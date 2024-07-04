@@ -406,7 +406,7 @@ segments: segments
   <script>
     var swiper = new Swiper(".mySwiper", {
       spaceBetween: 10,
-      slidesPerView: 4,
+      slidesPerView: 5,
       freeMode: true,
       watchSlidesProgress: true,
     });
