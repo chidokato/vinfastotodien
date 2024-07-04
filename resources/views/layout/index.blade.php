@@ -117,8 +117,13 @@
                         <input type="text" class="" name="" placeholder="Số điện thoại">
                     </div>
                     <div>
-                        <label>Email</label>
-                        <input type="text" class="" name="" placeholder="Email">
+                        <label>Dòng xe quan tâm</label>
+                        <select>
+                            <option>== Dòng xe quan tâm ==</option>
+                            @foreach($dongxe as $val)
+                            <option value="{{$val->name}}">{{$val->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div>
                         <button>Đăng ký ngay</button>

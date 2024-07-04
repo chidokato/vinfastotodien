@@ -29,4 +29,7 @@
     .fixd-right ul li a{ font-weight:bold; }
     .fixd-right{ width:100%; left:0; bottom:0; background:#0000004d; padding:5px }
     .hidden-pc{ display:block; }
+    .main-pupop .img{ display:none; }
+    .main-pupop .form{ width:100%; padding:0px }
+    .main-pupop .form h3{ font-size:1.5rem; }
 }
