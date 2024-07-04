@@ -116,4 +116,4 @@
 .main-pupop .form h3{ text-align:center; font-size:2rem; }
 .main-pupop .form form>div{ display:flex; flex-direction: column; }
 .main-pupop .form form input, .main-pupop .form form select{ margin-bottom:10px; border:1px solid #ddd; border-radius:3px; padding:4px 10px }
-.main-pupop .form form button{ margin-top:10px; background:#000; color:#fff; border:none; border-radius:5px; padding:10px }
+.main-pupop .form form button{ margin-top:10px; background:#288ad6; color:#fff; border:none; border-radius:5px; padding:10px }
