@@ -6000,6 +6000,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-bottom: 1px solid #f0f0f0;height: 315px;
     overflow: auto;
 }
+.product_d_right .product_desc ol{ padding-left:1rem }
 @media only screen and (max-width: 767px) {
   .product_d_right .product_desc {
     margin-bottom: 15px;
