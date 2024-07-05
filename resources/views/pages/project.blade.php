@@ -290,18 +290,18 @@
                         <div class="form">
                             <h3>Nhận báo giá & Ưu đãi trong tháng</h3>
                             <p>Ngay sau khi nhận được yêu cầu Chúng tôi sẽ gửi Báo giá Ưu đãi đến Quý khách ngay!</p>
-                            <form method="POST" action="{{route('sendmail')}}">
+                            <form id="validateForm" method="POST" action="{{route('sendmail')}}">
                                 @csrf  
                                 @method('HEAD')
-                                <div>
+                                <div class="iteam_row">
                                     <label>Họ & Tên</label>
                                     <input type="text" class="" name="name" placeholder="Họ & Tên">
                                 </div>
-                                <div>
+                                <div class="iteam_row">
                                     <label>Số điện thoại</label>
                                     <input type="text" class="" name="phone" placeholder="Số điện thoại">
                                 </div>
-                                <div>
+                                <div class="iteam_row">
                                     <label>Dòng xe quan tâm</label>
                                     <select name="note">
                                         <option>== Dòng xe quan tâm ==</option>
