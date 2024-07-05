@@ -76,9 +76,7 @@
 
     @yield('css')
 
-    <style type="text/css">
-        
-    </style>
+    {{ $setting->header }}
     
 </head>
 
@@ -244,6 +242,8 @@
         {{ Session::get('success') }}
     </div>
     @endif
+
+    {{ $setting->footer }}
 
 </body>
 
