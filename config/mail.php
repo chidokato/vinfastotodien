@@ -93,7 +93,7 @@ return [
 
     'from' => [
         'address' => 'tuan.pn92@gmail.com',
-        'name' => 'test mail',
+        'name' => 'Default Mail',
     ],
 
     /*

@@ -17,9 +17,16 @@
         dataBackgroundImage();
     });
 
+
+    // Đợi 5 giây (5000 milliseconds)
+    setTimeout(function() {
+        // Lấy phần tử cần ẩn
+        var element = document.getElementById('myElement');
+        // Ẩn phần tử bằng cách đặt thuộc tính display thành 'none'
+        element.style.display = 'none';
+    }, 5000);
+
     
-
-
     /*---stickey menu---*/
     // $(window).on('scroll',function() {    
     //        var scroll = $(window).scrollTop();
@@ -524,6 +531,10 @@
     $('.mini_cart_close,.off_canvars_overlay').on('click', function(){
         $('.mini_cart,.off_canvars_overlay').removeClass('active')
     });
+
+    setTimeout(function() {
+        $('.click_popup > a').click();
+    }, 5000);
 
     
 

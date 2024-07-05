@@ -149,7 +149,7 @@
 
     <div class="mini_cart">
         <div class="cart_close">
-            <div class="mini_cart_close">
+            <div class="mini_cart_close" id="myButton">
                 <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
             </div>
         </div>
@@ -160,18 +160,20 @@
             <div class="form">
                 <h3>Nhận báo giá & Ưu đãi trong tháng</h3>
                 <p>Ngay sau khi nhận được yêu cầu Chúng tôi sẽ gửi Báo giá Ưu đãi đến Quý khách ngay!</p>
-                <form>
+                <form method="POST" action="{{route('sendmail')}}">
+                    @csrf  
+                    @method('HEAD')
                     <div>
                         <label>Họ & Tên</label>
-                        <input type="text" class="" name="" placeholder="Họ & Tên">
+                        <input type="text" class="" name="name" placeholder="Họ & Tên">
                     </div>
                     <div>
                         <label>Số điện thoại</label>
-                        <input type="text" class="" name="" placeholder="Số điện thoại">
+                        <input type="text" class="" name="phone" placeholder="Số điện thoại">
                     </div>
                     <div>
                         <label>Dòng xe quan tâm</label>
-                        <select>
+                        <select name="note">
                             <option>== Dòng xe quan tâm ==</option>
                             @foreach($dongxe as $val)
                             <option value="{{$val->name}}">{{$val->name}}</option>
@@ -179,7 +181,7 @@
                         </select>
                     </div>
                     <div>
-                        <button>Đăng ký ngay</button>
+                        <button type="Submit">Đăng ký ngay</button>
                     </div>
                 </form>
             </div>    
@@ -238,7 +240,7 @@
     @yield('js')
     
     @if (Session::has('success'))
-    <div class="alert alert-success">
+    <div id="myElement" class="alert alert-success">
         {{ Session::get('success') }}
     </div>
     @endif
