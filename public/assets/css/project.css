@@ -55,6 +55,11 @@
     }
 
 
+.form form>div{ display:flex; flex-direction: column; margin-bottom:10px }
+.form form>div input, .form form>div select{ padding:5px; border:1px solid #ddd; border-radius:4px }
+.form form>div select{ padding:8px 5px }
+.form form>div button{ margin-top:10px; background:#288ad6; border:none; border-radius:5px; color:#fff; padding:10px  }
+
 @media screen and (max-width: 480px) {
     .swiper-slide img{ height:280px }
     .mySwiper .swiper-slide img{ height:60px }

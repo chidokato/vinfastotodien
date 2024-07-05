@@ -287,7 +287,34 @@
                     </div>
                     <br>
                     <div class="product_d_inner ">
-                        ádasd
+                        <div class="form">
+                            <h3>Nhận báo giá & Ưu đãi trong tháng</h3>
+                            <p>Ngay sau khi nhận được yêu cầu Chúng tôi sẽ gửi Báo giá Ưu đãi đến Quý khách ngay!</p>
+                            <form method="POST" action="{{route('sendmail')}}">
+                                @csrf  
+                                @method('HEAD')
+                                <div>
+                                    <label>Họ & Tên</label>
+                                    <input type="text" class="" name="name" placeholder="Họ & Tên">
+                                </div>
+                                <div>
+                                    <label>Số điện thoại</label>
+                                    <input type="text" class="" name="phone" placeholder="Số điện thoại">
+                                </div>
+                                <div>
+                                    <label>Dòng xe quan tâm</label>
+                                    <select name="note">
+                                        <option>== Dòng xe quan tâm ==</option>
+                                        @foreach($dongxe as $val)
+                                        <option value="{{$val->name}}">{{$val->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div>
+                                    <button type="Submit">Đăng ký ngay</button>
+                                </div>
+                            </form>
+                        </div>    
                     </div>
                 </div>
             </div>
