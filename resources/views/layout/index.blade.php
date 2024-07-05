@@ -100,7 +100,7 @@
         </div>
         <div class="hotline-bar click_popup">
             <a href="javascript:void(0)">
-                <span class="text-hotline">Nhận bảng giá</span>
+                <span class="text-hotline">Bảng giá</span>
             </a>
         </div>
     </div>
