@@ -76,7 +76,7 @@
 
     @yield('css')
 
-    {{ $setting->header }}
+    {!! $setting->header !!}
     
 </head>
 
@@ -243,7 +243,7 @@
     </div>
     @endif
 
-    {{ $setting->footer }}
+    {!! $setting->footer !!}
 
 </body>
 
