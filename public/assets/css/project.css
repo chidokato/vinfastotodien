@@ -54,7 +54,8 @@
       opacity: 1;
     }
 
-
+.form h3{ font-size:1.2rem; color:#288ad6; }
+.form p{ font-size:0.8rem; font-style: italic; line-height:17px  }
 .form form>div{ display:flex; flex-direction: column; margin-bottom:10px }
 .form form>div input, .form form>div select{ padding:5px; border:1px solid #ddd; border-radius:4px }
 .form form>div select{ padding:8px 5px }
