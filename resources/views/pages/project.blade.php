@@ -108,9 +108,9 @@
                     
                     <div class="row btn-group-product">
                         <div class="col-6">
-                            <a class="btn btn-big btn-seller" href="tel:0985075533">
+                            <a class="btn btn-big btn-seller" href="tel:{{$setting->hotline}}">
                                 <span>Phụ trách kinh doanh</span>
-                                <span class="info-text">0985.075.533</span>
+                                <span class="info-text">{{$setting->hotline}}</span>
                             </a>
                             <div class="click_popup">
                                 <a class="btn btn-big btn-request" href="javascript:void(0)">
