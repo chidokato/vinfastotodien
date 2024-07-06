@@ -113,6 +113,12 @@ class HomeController extends Controller
             ));
         }
     }
+
+    public function camon()
+    {
+        return view('emails.camon');
+    }
+
     // ============================
     // ============================
     // ============================

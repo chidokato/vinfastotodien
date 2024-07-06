@@ -29,7 +29,7 @@ class HomeSystemController extends Controller
             $email->subject('Data VinFast Ô Tô Điện');
             $email->to($mail, 'VinFast Ô Tô Điện');
         });
-        return redirect()->route('home')->with('success','Gửi thành công');
+        return redirect()->route('camon')->with('success','Gửi thành công');
     }
 
     // public function question(Request $request){

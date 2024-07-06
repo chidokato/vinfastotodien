@@ -108,6 +108,7 @@ Route::get('search', [HomeController::class, 'search'])->name('search');
 
 // home system
 Route::get('sendmail', [HomeSystemController::class, 'sendmail'])->name('sendmail');
+Route::get('camon', [HomeController::class, 'camon'])->name('camon');
 Route::post('question', [HomeSystemController::class, 'question'])->name('question');
 
 // add to cart
