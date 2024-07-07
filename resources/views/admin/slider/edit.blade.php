@@ -86,7 +86,7 @@
                 <div class="form-group">
                     <input type="file" name="img_mobile">
                 </div>
-                <img class="" src="data/home/{{$data->img_mobile}}" />
+                <img style="width: 200px;" class="" src="data/home/{{$data->img_mobile}}" />
             </div>
 
         </div>
