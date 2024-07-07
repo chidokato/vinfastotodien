@@ -82,6 +82,13 @@
                 </div>
             </div>
 
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="file" name="img_mobile">
+                </div>
+                <img class="" src="data/home/{{$data->img_mobile}}" />
+            </div>
+
         </div>
       </div>
 </div>

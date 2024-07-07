@@ -117,6 +117,19 @@ class SliderController extends Controller
             $slider->img = $filename;
         }
         // thêm ảnh
+
+        // thêm ảnh mobile
+        if ($request->hasFile('img_mobile')) {
+            if(File::exists('data/home/'.$slider->img_mobile)) { File::delete('data/home/'.$slider->img_mobile);} // xóa ảnh cũ
+            $file = $request->file('img_mobile');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(2000, 2000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+            // $file->move('data/home', $filename);
+            $slider->img_mobile = $filename;
+        }
+        // thêm ảnh
+
         $slider->save();
         // return redirect('admin/slider')->with('Success','Thành công');
         return redirect()->back()->with('Success','Thành công');
