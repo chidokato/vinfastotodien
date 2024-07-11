@@ -114,10 +114,10 @@
 .cart_close{ position:absolute; top:7px; right:12px }
 .main-pupop .form h3{ text-align:center; font-size:1.3rem; color:#2980b9; font-weight:bold; }
 .main-pupop .form p{ text-align:center; }
-.main-pupop .form p span{ color:red; font-weight:bold; font-size:110% }
+.main-pupop .form p span{ color:#d40000; font-weight:bold; font-size:110% }
 .main-pupop .form form>div{ display:flex; flex-direction: column; }
 .main-pupop .form form input, .main-pupop .form form select{ border:1px solid #ddd; border-radius:3px; padding:4px 10px }
-.main-pupop .form form button{ margin-top:10px; background:red; color:#fff; border:none; border-radius:5px; padding:10px; font-weight:bold; }
+.main-pupop .form form button{ margin-top:10px; background:#d40000; color:#fff; border:none; border-radius:5px; padding:10px; font-weight:bold; }
 
 .alert-success{ 
     position: fixed;
@@ -131,4 +131,4 @@
 
 #validateForm .iteam_row{ margin-bottom:15px }
 #validateForm .iteam_row{ position:relative; }
-#validateForm label.error{ position:absolute; top:12px; right:0; color:red; margin-bottom:0; background:#fff; padding:0px 10px }
+#validateForm label.error{ position:absolute; top:12px; right:0; color:#d40000; margin-bottom:0; background:#fff; padding:0px 10px }
