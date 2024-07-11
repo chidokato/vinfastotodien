@@ -117,7 +117,7 @@
 .main-pupop .form p span{ color:red; font-weight:bold; font-size:110% }
 .main-pupop .form form>div{ display:flex; flex-direction: column; }
 .main-pupop .form form input, .main-pupop .form form select{ border:1px solid #ddd; border-radius:3px; padding:4px 10px }
-.main-pupop .form form button{ margin-top:10px; background:#288ad6; color:#fff; border:none; border-radius:5px; padding:10px }
+.main-pupop .form form button{ margin-top:10px; background:red; color:#fff; border:none; border-radius:5px; padding:10px; font-weight:bold; }
 
 .alert-success{ 
     position: fixed;
