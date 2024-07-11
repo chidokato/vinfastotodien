@@ -17,7 +17,7 @@
 
 
 @media screen and (max-width: 480px) {
-    .slider_area .single_slider img, .slider_area .single_slider{ height:25vh }
+    .slider_area .single_slider img, .slider_area .single_slider{ height:100vh }
     .section0 .content-home ul li{ margin-bottom:5px }
     .section0 .content-home h2{ font-size:1rem; line-height:24px }
     .section0 { padding:20px 0; }
@@ -33,4 +33,6 @@
     .main-pupop .form{ width:100%; padding:0px }
     .main-pupop .form h3{ font-size:1.5rem; }
     .section0 .content-home .contact a{ padding:10px }
+    .mobi-hiden{ display:none !important; }
+    .pc-hiden{ display:block !important; }
 }

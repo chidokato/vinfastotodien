@@ -17,6 +17,7 @@
 .slider_area .owl-dots .owl-dot.active::before{ width:34px; border-radius:10px; top:-2px }
 .slider_area .single_slider{ height:75vh }
 .slider_area .single_slider img{ height:100%; object-fit:cover; }
+.slider_area .single_slider .pc-hiden{ display:none !important; }
 
 /*new_product_area*/
 .section1 .small_product .product_thumb img{ height:100%; object-fit:cover; }

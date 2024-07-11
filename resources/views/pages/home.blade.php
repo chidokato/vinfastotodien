@@ -20,7 +20,8 @@
                     <div class="slider_area slider_three owl-carousel">
                         @foreach($slider as $val)
                         <div class="single_slider">
-                            <img src="data/home/{{$val->img}}">
+                            <img class="mobi-hiden" src="data/home/{{$val->img}}">
+                            <img class="pc-hiden" src="data/home/{{$val->img_mobile}}">
                         </div>
                         @endforeach
                     </div>
