@@ -150,7 +150,7 @@
                     <div class="">
                         <div class="">
                             <div class="product_info_content page-content">
-                                <h2>Giá lăn bánh (<strong>Chưa</strong> bao gồm PIN)</h2>
+                                <!-- h2>Giá lăn bánh (<strong>Chưa</strong> bao gồm PIN)</h2>
                                 <p>Giá tạm tính tại thời điểm này. Mức phí có thể khác nhau ở các tỉnh. Vui lòng liên hệ hotline <a href="tel:{{$setting->hotline}}">{{$setting->hotline}} </a> để được tư vấn và gửi báo giá xe lăn bánh chính sách nhất.</p>
                                 <div style="overflow: auto;">
                                     <table>
@@ -273,7 +273,7 @@
                                             <th>{{number_format($post->price + 340000 + 1560000 + 437000 + 1000000)}}</th>
                                         </tr>
                                     </table>
-                                </div>
+                            </div -->
                                 {!! $post->content !!}
                             </div>
                         </div>
