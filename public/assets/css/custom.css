@@ -87,7 +87,7 @@
 
 .product-details-tab #thumbs .owl-item .item{ padding:5px }
 
-.product_d_info .product_d_inner *{ position:relative; z-index:1 }
+.product_d_info .product_d_inner *{ position:relative; z-index:1; height: auto !important; }
 .product_d_info .product_d_inner h2{ font-size:1.1rem; padding-top: 80px; margin-top: -80px; position:relative; z-index:0 }
 .product_d_info .product_d_inner h2::after{ content:""; width:50px; height:3px; background:#a70418; position:absolute; left:0; bottom:0px }
 .product_d_info .product_d_inner table{ width:100%; border:none; margin-bottom:20px }
