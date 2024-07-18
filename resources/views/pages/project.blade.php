@@ -36,36 +36,22 @@
 <div class="product_details variable_product">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-7">
+            <div class="col-lg-9 col-md-9">
                 <div class="product-details-tab">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="data/product/{{$post->img}}" />
+                            </div>
+                            @foreach($images as $val)
+                            <div class="swiper-slide">
+                                <img src="data/product/detail/{{$val->img}}" />
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                     
-                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="data/product/{{$post->img}}" />
-                            </div>
-                            @foreach($images as $val)
-                            <div class="swiper-slide">
-                                <img src="data/product/detail/{{$val->img}}" />
-                            </div>
-                            @endforeach
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <div thumbsSlider="" class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="data/product/{{$post->img}}" />
-                            </div>
-                            @foreach($images as $val)
-                            <div class="swiper-slide">
-                                <img src="data/product/detail/{{$val->img}}" />
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-
 
                     <!-- <div class="main-carousel owl-carousel">
                         <div> <img src="data/product/{{$post->img}}" alt="Image 1"> </div>
@@ -83,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-5 col-md-5">
+            <div class="col-lg-3 col-md-3">
                 <div class="product_d_right">
                     <h1>{{$post->name}}</h1>
                     <div class="product_ratings d-flex" style="align-items: center;">
@@ -102,12 +88,12 @@
                             <small>{{ $post->price ? $post->unit : '' }}</small> 
                         </span>
                     </div>
-                    <div class="product_desc">
+                    <!-- <div class="product_desc">
                         {!! $post->detail !!}
-                    </div>
+                    </div> -->
                     
                     <div class="row btn-group-product">
-                        <div class="col-6">
+                        <div class="col-12">
                             <a class="btn btn-big btn-seller" href="tel:{{$setting->hotline}}">
                                 <span>Phụ trách kinh doanh</span>
                                 <span class="info-text">{{$setting->hotline}}</span>
@@ -119,7 +105,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="click_popup">
                                 <a class="btn btn-big btn-test-driver" href="javascript:void(0)">
                                     <span>Gửi liên hệ</span>
@@ -274,6 +260,8 @@
                                         </tr>
                                     </table>
                             </div -->
+                                {!! $post->detail !!}
+                                <hr>
                                 {!! $post->content !!}
                             </div>
                         </div>
@@ -432,19 +420,8 @@ segments: segments
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 10,
-      slidesPerView: 5,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      thumbs: {
-        swiper: swiper,
+      pagination: {
+        el: ".swiper-pagination",
       },
     });
   </script>

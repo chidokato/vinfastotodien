@@ -5958,6 +5958,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 22px;
+  font-weight: bold;
 }
 @media only screen and (max-width: 767px) {
   .product_d_right h1 {
