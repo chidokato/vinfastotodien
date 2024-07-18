@@ -270,10 +270,10 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="fix-sticky">
-                    <div class="product_d_inner ">
+                    <!-- <div class="product_d_inner ">
                         <div class="js-table-of-content table-of-content "></div>
                     </div>
-                    <br>
+                    <br> -->
                     <div class="product_d_inner ">
                         <div class="form">
                             <h3>Nhận báo giá & Ưu đãi trong tháng</h3>
