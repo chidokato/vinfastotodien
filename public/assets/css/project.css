@@ -28,5 +28,5 @@
 
 @media screen and (max-width: 480px) {
     .swiper-slide img{ height:280px }
-    .mySwiper .swiper-slide img{ height:60px }
+    .mySwiper .swiper-slide img{ height:250px }
 }
