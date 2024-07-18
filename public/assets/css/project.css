@@ -26,6 +26,10 @@
 .form form>div select{ padding:8px 5px }
 .form form>div button{ margin-top:10px; background:#288ad6; border:none; border-radius:5px; color:#fff; padding:10px  }
 
+.product_d_info .product_d_inner td {
+    font-size: .8rem;
+}
+
 @media screen and (max-width: 480px) {
     .swiper-slide img{ height:280px }
     .mySwiper .swiper-slide img{ height:250px }
