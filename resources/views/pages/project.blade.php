@@ -283,11 +283,11 @@
                                 @method('HEAD')
                                 <div class="iteam_row">
                                     <label>Họ & Tên</label>
-                                    <input type="text" class="" name="name" placeholder="Họ & Tên">
+                                    <input required type="text" class="" name="name" placeholder="Họ & Tên">
                                 </div>
                                 <div class="iteam_row">
                                     <label>Số điện thoại</label>
-                                    <input type="text" class="" name="phone" placeholder="Số điện thoại">
+                                    <input required type="text" class="" name="phone" placeholder="Số điện thoại">
                                 </div>
                                 <div class="iteam_row">
                                     <label>Dòng xe quan tâm</label>
@@ -425,6 +425,5 @@ segments: segments
       },
     });
   </script>
-
 
 @endsection
