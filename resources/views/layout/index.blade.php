@@ -133,7 +133,7 @@
                 </div>
             
             <div class="hotline-bar">
-                <a href="tel:{{$setting->hotline}}">
+                <a href="tel:{{$setting->hotline}}" style="white-space: nowrap;">
                     <span class="text-hotline">Gọi ngay</span>
                 </a>
             </div>
