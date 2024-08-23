@@ -158,7 +158,7 @@
                 <img src="assets/img/about/pupop.jpg">
             </div>        
             <div class="form">
-                <h3>NHẬN CHI TIẾT KHUYẾN MÃI ádasd</h3>
+                <h3>NHẬN CHI TIẾT KHUYẾN MÃI</h3>
                 <p>Để nhận được <span>"BÁO GIÁ ĐẶC BIỆT"</span> và các <span>"CHƯƠNG TRÌNH KHUYẾN MÃI"</span>, quý khách vui lòng điền form báo giá dưới đây</p>
                 <form id="validateForm" method="POST" action="{{route('sendmail')}}">
                     @csrf  
